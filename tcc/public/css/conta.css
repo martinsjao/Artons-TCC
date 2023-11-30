@@ -1,0 +1,252 @@
+/****************************************************************/
+
+/*Botão editar & Fonte (sua conta)*/
+
+/****************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+.BtnEdit{
+    background-color: #5AB9C6;
+}
+
+.IconColor{
+    color: #5AB9C6;
+}
+
+
+.Font{
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    color:#727272;
+}
+
+/****************************************************************/
+
+/*TELA PRINCIPAL*/
+
+/****************************************************************/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/*menu superior*/
+.menusup{
+    height: 66px;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Alinha os elementos na navbar */
+    align-items: center;
+    border-radius: 0%;
+    margin: 0%;
+    padding: 0%;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.personalizar{
+  background-color: #5AB9C6;
+  color: white;
+  border: white;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  font-family: 'Outfit', sans-serif;
+}
+
+/*menu lateral*/
+.side-bar{
+  background: rgba(206, 206, 206, 0.1);
+  backdrop-filter:blur(10px);
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left: -100%;
+  overflow-y: auto;
+  transition: 0.5s ease;
+  transition-property: left;
+  margin-top: 66px;
+}
+
+.side-bar.active{
+  left: 0;
+}
+
+.side-bar .menu{
+  width: 100%;
+  margin-top: 0px;
+}
+
+.side-bar .menu .item{
+  position:relative;
+  cursor:pointer;
+}
+
+.side-bar .menu .item a{
+  color: #464646;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  padding: 5px 30px;
+  line-height: 60px;
+}
+
+
+.side-bar .menu .item a:hover{
+  color: #158291;
+  transition: 0.3s ease;
+}
+
+
+.side-bar .menu .item i{
+  margin-right: 15px;
+  font-size: 24px;
+}
+
+.side-bar .menu .item a .dropdown{
+  position: absolute;
+  left: 200px;
+  margin-top: 6px;
+  transition: 0.3s ease;
+
+}
+
+.side-bar .menu .item .sub-menu{
+  background: rgba(90, 185, 198, 0.1);
+  display:none;
+}
+
+.side-bar .menu .item .sub-menu a{
+  text-align: center;
+}
+
+.rotate{
+  transform: rotate(90deg);
+}
+
+.menu-btn {
+  position: absolute;
+  color: #bebebe;
+  font-size: 24px;
+  margin: 6px;
+  cursor: pointer;
+  z-index: 3;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+}
+
+.menu-btn:hover {
+  background-color: rgba(192, 192, 192, 0.1);
+
+
+}
+.cor{
+  color: #727272;
+}
+
+
+
+/*barra de rolagem*/
+html ::-webkit-scrollbar {
+  width: 0px;
+}
+
+/*logo da nav*/
+.logo {
+    display: flex;
+    align-items: center;
+    line-height: 66px;
+    vertical-align: middle;
+  }
+
+  .imglogo2{
+    height: 125px;
+    margin-left: 52px;
+    z-index: 2;
+  }
+
+  .containerl{
+    display: flex;
+    align-items: center;
+  }
+
+
+.entrar-button {
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    background-color: #5AB9C6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto; /* Empurra o botão para a esquerda o máximo possível */
+    font-family: 'Outfit', sans-serif;
+}
+
+.entrar-button:hover {
+    background-color: rgba(90, 185, 198, 0.9);
+}
+
+
+  /* Formulário */
+  .placeholder-text::placeholder {
+    font-size: 15px;
+}
+
+.remover-button{
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    background-color: #727272;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto; /* Empurra o botão para a esquerda o máximo possível */
+    font-family: 'Outfit', sans-serif;
+}
+
+.remover-button:hover {
+    background-color: rgba(117, 117, 117, 0.9);
+}
+
+
+.salvar-button{
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    background-color: #5AB9C6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto; /* Empurra o botão para a esquerda o máximo possível */
+    font-family: 'Outfit', sans-serif;
+}
+
+.salvar-button:hover {
+    background-color: rgba(90, 185, 198, 0.9);
+}
+.position-absolute {
+    bottom: 50px; /* Ajuste a distância vertical para cima conforme necessário */
+    right: 10px; /* Ajuste a distância horizontal para a esquerda conforme necessário */
+}
+
+
+

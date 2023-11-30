@@ -1,0 +1,1514 @@
+
+
+create database tcc
+use tcc
+
+insert into disciplinas
+(nome_disc, img_disc)
+values 
+('Português', 'img/disciplinas/portugues.png'),
+('Matemática', 'img/disciplinas/matematica.png'),
+('Química', 'img/disciplinas/quimica.png'),
+('Física', 'img/disciplinas/fisica.png'),
+('Biologia', 'img/disciplinas/biologia.png'),
+('História', 'img/disciplinas/historia.png'),
+('Geografia', 'img/disciplinas/geografia.png'),
+('Filosofia', 'img/disciplinas/filosofia.png'),
+('Sociologia', 'img/disciplinas/sociologia.png'),
+('Literatura', 'img/disciplinas/literatura.png'),
+('Inglês', 'img/disciplinas/ingles.png')
+
+select * from disciplinas
+
+insert into conteudos
+(nome_cont, texto_cont, video_cont, disc_id)
+values 
+('Regencia Verbal', 'A regência verbal refere-se às relações sintáticas entre um verbo e seus complementos. Envolve a correta utilização de preposições para expressar a relação entre o verbo e seus objetos diretos e indiretos. Compreender a regência verbal é essencial para a clareza e precisão na expressão escrita e oral, evitando ambiguidades na comunicação.','https://www.youtube.com/embed/JLb__tey3AM?si=Lqdz5QeH-FMDaodY','1'),
+('Concordância Nominal','A concordância nominal trata da harmonia entre substantivos, adjetivos e artigos em relação ao gênero e número. Garante a concordância adequada, evitando desvios gramaticais. Dominar as regras de concordância nominal é fundamental para a construção gramaticalmente correta das frases e para a transmissão eficaz da mensagem.','https://www.youtube.com/embed/ATCfXJT4Tdg?si=UxphvhTNMUCijHi1','1'),
+('Concordância Verbal','A concordância verbal diz respeito à adequação entre o verbo e os seus sujeitos, em número e pessoa. Manter a concordância verbal correta é crucial para a coerência gramatical das sentenças, assegurando que o verbo esteja em sintonia com o seu agente. A compreensão dessas regras é essencial para a clareza e a qualidade da expressão linguística.','https://www.youtube.com/embed/DqQVqMFmyaY?si=niNSJ6aa21UEXJhX','1'),
+('Elementos de Coesão','Os elementos de coesão são recursos linguísticos que conectam partes do texto, conferindo-lhes unidade e fluidez. Incluem pronomes, conjunções e advérbios, essenciais para estabelecer relações lógicas entre as ideias. A habilidade de utilizar efetivamente os elementos de coesão contribui para a clareza e coesão textual.','https://www.youtube.com/embed/DYCcyb5VAu4?si=xf2YMh9OeTqA09ES','1'),
+('Equação do primeiro grau','As equações de 1º grau são expressões matemáticas lineares que descrevem um relacionamento proporcional entre variáveis. Elas podem ser resolvidas para encontrar o valor desconhecido, onde a solução é um número real que faz a igualdade ser verdadeira. Essas equações são amplamente usadas para modelar situações do mundo real, como cálculos de custos, planejamento financeiro e muitos outros cenários onde existe uma relação linear. A simplicidade das equações de 1º grau torna essa ferramenta matemática essencial em diversas disciplinas, permitindo-nos descrever e prever comportamentos em muitos contextos.','https://www.youtube.com/embed/bWJrg5DyuMY?si=JT06QeOD2hfD0C7E','2'),
+('Equação do segundo grau','As equações de 2º grau, ou equações quadráticas, são fundamentais na matemática e ciências. Elas envolvem uma variável elevada ao quadrado, resultando em soluções que podem ser números reais ou complexos, dependendo do discriminante. As equações quadráticas modelam muitos fenômenos na física, engenharia e economia, onde relações não lineares são comuns. Com aplicações desde a cinemática de projéteis até a otimização de funções, as equações de 2º grau desempenham um papel crucial na resolução de problemas complexos.','https://www.youtube.com/embed/LNLvMo1PWok?si=qM6dSnWmOGZSrhfA','2'),
+('Inequações','As inequações são desigualdades matemáticas que representam uma relação entre duas expressões. Elas têm múltiplas soluções e são aplicadas em muitos contextos da matemática e do mundo real, como modelagem de restrições em otimização, análise de limites e desigualdades socioeconômicas. A compreensão de inequações é essencial para resolver problemas onde a igualdade não é suficiente para descrever relações.','https://www.youtube.com/embed/fAKwRRptIJo?si=royViGJngR1U33Gx','2'),
+('Sistemas Lineares','Sistemas lineares são conjuntos de equações lineares com variáveis compartilhadas. Resolver sistemas lineares envolve encontrar os valores das variáveis que satisfazem todas as equações simultaneamente. Eles podem ter uma solução única, infinitas soluções ou serem inconsistentes. Sistemas lineares são amplamente aplicados em ciências naturais, engenharia e ciências sociais, modelando interações entre variáveis lineares em sistemas complexos.','https://www.youtube.com/embed/3caI3hvf-lo?si=__NMw1b9Z60_K0U5','2'),
+('Ligações Químicas','As ligações químicas são os fundamentos da química, unindo átomos em moléculas e compostos. Elas podem ser covalentes, onde os átomos compartilham elétrons para atingir estabilidade, ou iônicas, onde ocorre transferência de elétrons entre átomos com cargas opostas. As ligações definem as propriedades físicas e químicas das substâncias, influenciando desde a solubilidade até a condutividade elétrica. Compreender as ligações é essencial para a construção do conhecimento químico, permitindo a predição do comportamento das substâncias em diferentes situações.','https://www.youtube.com/embed/S6PcueZI_h4?si=BMG_2g0-K-W4jPS-','3'),
+('Reações inorgâncias','Reações inorgânicas envolvem compostos que geralmente não contêm carbono. Elas incluem propriedades como a síntese, onde substâncias simples se combinam para formar compostos mais complexos, a decomposição, onde compostos complexos se decompõem em substâncias mais simples, além de reações de troca simples e de dupla troca. Essas reações são a base da química inorgânica, com aplicações desde a indústria química até a formação de minerais na Terra.','https://www.youtube.com/embed/gkTn2QORAC8?si=3FAFaIC61FVyTj_O','3'),
+('Reações de oxirredução','As reações de oxidorredução envolvem a transferência de elétrons entre espécies químicas. A oxidação é a perda de elétrons por uma substância, enquanto a redução é o ganho de elétrons por outra substância. Essas reações desempenham um papel crucial em processos biológicos, como a respiração celular, e em fenômenos comuns, como a corrosão de metais. Compreender as reações de oxidorredução é essencial para controlar processos químicos em uma variedade de aplicações.','https://www.youtube.com/embed/J-ri95fkKbM?si=PyTf3ozUp2WcJRao','3'),
+('Massa molar e número de mol','O mol é uma unidade que representa uma quantidade fixa de substância, permitindo que os químicos contem átomos, íons ou moléculas de forma prática. O número de Avogadro (6,022 x 10^23) é a base desse conceito, fornecendo uma escala para a contagem de partículas em uma amostra. A massa molar, por sua vez, é a massa de um mol de uma substância expressa em gramas por mol. Essas propriedades são cruciais na química, pois permitem a conversão entre a escala microscópica de átomos e a macroscópica de gramas.','https://www.youtube.com/embed/k4Y3VfZHvLw?si=vzO-vO4NzeVqzZ4d','3'),
+('Movimento Uniforme','O movimento uniforme é um conceito fundamental na física que descreve o deslocamento de um objeto em linha reta com velocidade constante ao longo do tempo. Nesse tipo de movimento, a direção e magnitude da velocidade permanecem inalteradas, o que o torna altamente previsível e matematicamente simples, dando sentido também ao próprio nome do tema. A equação horária do movimento uniforme relaciona distância percorrida, velocidade constante e tempo. Este princípio é essencial na construção de modelos e teorias mais complexas na física e tem aplicações práticas em diversas áreas, como engenharia e ciências naturais. Compreender o movimento uniforme é o primeiro passo para explorar os fenômenos de movimento em maior profundidade','https://www.youtube.com/embed/PJKYzv_dpXM?si=KE6CfEsKdX-DHsPi','4'),
+('Movimento uniformemente variado','O movimento uniformemente variado é um conceito fundamental na física que descreve o deslocamento de objetos em uma trajetória retilínea, com uma aceleração constante. Ao contrário do movimento uniforme, no qual a velocidade permanece constante, no movimento uniformemente variado, a velocidade do objeto muda uniformemente ao longo do tempo. Isso leva a variações na posição em relação ao tempo, que podem ser modeladas por equações específicas. Este tipo de movimento é essencial para compreender fenômenos mais complexos, como a queda livre dos corpos, e é fundamental para a física newtoniana. Compreender o movimento uniformemente variado é crucial para analisar situações onde a aceleração desempenha um papel fundamental no deslocamento de objetos.','https://www.youtube.com/embed/r6pKRscSTyg?si=sgdUOWEwl7bEhiW9','4'),
+('Leis de Newton','As Leis de Newton são os princípios fundamentais da mecânica clássica que descrevem o comportamento do movimento de objetos.
+Estabelecidas por Sir Isaac Newton no século XVII, essas leis são a base do estudo da dinâmica e têm uma aplicação universal. 
+1. A Primeira Lei de Newton, ou ”Lei da Inércia afirma” que um objeto permanecerá em repouso ou em movimento retilíneo uniforme a menos que uma força externa aja sobre ele.
+
+2. A Segunda Lei de Newton estabelece que a força aplicada a um objeto é diretamente proporcional à sua aceleração e inversamente proporcional à sua massa, representada pela famosa equação F = ma.
+
+3. A Terceira Lei de Newton afirma que para cada ação, há uma reação igual e oposta. Em outras palavras, as forças ocorrem em pares, onde uma força gera uma reação de igual intensidade na direção oposta.
+
+Essas leis são essenciais para compreender como os objetos se movem e interagem no universo, sendo a base de muitos campos da física e da engenharia.
+','https://www.youtube.com/embed/iuPrkzJp20I?si=hutwFPPwV4-6DnRT','4'),
+('Força Centrípeta','A força centrípeta é um conceito fundamental na física que descreve a força necessária para manter um objeto em movimento em uma trajetória circular. Ela atua em direção ao centro da curva e é responsável por manter o objeto em um movimento circular uniforme. A força centrípeta não é uma força única, mas sim o resultado líquido das forças que agem sobre um objeto em movimento circular, como a tensão em um fio, a gravidade ou a força elástica. A sua magnitude depende da velocidade do objeto, do raio da trajetória circular e da massa do objeto. Compreender a força centrípeta é fundamental em muitos contextos, desde a física de partículas até a dinâmica de sistemas em rotação, como planetas em órbita.','https://www.youtube.com/embed/69jYx2p5dhA?si=YtTYhUjagqHE5hGN','4'),
+('Verminoses','As verminoses são doenças causadas por parasitas intestinais, como vermes. Essas infecções impactam a saúde humana, interferindo na absorção de nutrientes e podendo levar a complicações gastrointestinais. A prevenção e tratamento adequados são fundamentais para controlar essas infecções e garantir a saúde.','https://www.youtube.com/embed/wbiFT880Puk?si=GQ-ck5mvlGK9j2rQ','5'),
+('Genética - Dna e Rna','A genética explora a hereditariedade e a variabilidade biológica. O DNA, material genético, e o RNA desempenham papéis cruciais na transmissão de informações genéticas. O DNA contém instruções para a síntese de proteínas, enquanto o RNA atua na tradução dessas informações, fundamentais para o funcionamento celular e a expressão genética.','https://www.youtube.com/embed/LFqaBPFXAh0?si=WwVeP8sUA7U9U4BC','5'),
+('Síntese de proteínas','A síntese de proteínas é um processo vital, ocorrendo nos ribossomos das células. A transcrição do DNA para RNA mensageiro e a subsequente tradução em cadeias proteicas são cruciais para o funcionamento celular, influenciando o desenvolvimento, manutenção e reparo dos tecidos.','https://www.youtube.com/embed/KAB-ZCP_ie8?si=av904yQDgqINYJ9Y','5'),
+('Grupos Sanguíneos','Os grupos sanguíneos são determinados por antígenos presentes nas células vermelhas do sangue. O sistema ABO e o fator Rh são os principais grupos. Essa classificação é crucial para transfusões sanguíneas, evitando reações adversas, e para compreender a genética da herança sanguínea.','https://www.youtube.com/embed/YHVGww7D7Ig?si=HLKrVPZSuDjv8Qm0','5'),
+('Republica Velha','A República Velha, compreendendo o período de 1889 a 1930 no Brasil, é caracterizada por várias propriedades políticas e sociais distintas. Durante essa época, o país testemunhou a instauração de uma forma de governo republicano e democrático, marcada por eleições e descentralização do poder, com estados influentes, como São Paulo e Minas Gerais, alternando a presidência. Além disso, a República Velha ficou conhecida pelo sistema do "Café com Leite", em que as oligarquias políticas desses estados mantinham o controle político. No entanto, a era foi também caracterizada por instabilidade política, devido a fraudes eleitorais, revoltas e conflitos internos, destacando-se a Revolta da Armada e a Revolução Federalista. A elite agrária manteve sua influência, e a sociedade brasileira viu a emergência de movimentos sociais, como o tenentismo, que questionava a ordem estabelecida. A República Velha desempenhou um papel importante na consolidação da república no Brasil, apesar de suas contradições e desafios.','https://www.youtube.com/embed/Vw4HGHDWMjs?si=AnpmFKBCGrWXgKb7','6'),
+('Ditadura Militar','A Ditadura Militar, que abrangeu o período de 1964 a 1985 no Brasil, foi caracterizada por propriedades políticas, sociais e econômicas profundamente impactantes. Durante esse período, o país vivenciou uma ruptura democrática, com o golpe militar de 1964, levando ao estabelecimento de um governo autoritário. As propriedades notáveis da ditadura incluíram a censura à imprensa, perseguição política, repressão de movimentos sociais e restrição das liberdades civis. A economia experimentou uma abertura a políticas de mercado, marcando a transição de um modelo econômico estatizante para um mais liberal. O regime autoritário terminou em meados dos anos 1980 com a redemocratização do país e a promulgação da nova Constituição. A Ditadura Militar deixa um legado complexo na sociedade brasileira, com impactos políticos, sociais e econômicos duradouros.','https://www.youtube.com/embed/B8hLHJSA6V0?si=kGcPIY_ZNDU5YaDg','6'),
+('Imperialismo','O imperialismo é um fenômeno histórico que engloba diversas propriedades econômicas, políticas e culturais. Durante o final do século XIX e início do século XX, as nações europeias e os Estados Unidos estenderam sua influência sobre nações mais fracas. As propriedades notáveis do imperialismo incluíram a busca por recursos naturais, a exploração de territórios colonizados, a competição entre as potências globais e o estabelecimento de impérios. Isso frequentemente envolveu a dominação e a subjugação de povos e nações em benefício das potências imperialistas. O imperialismo desempenhou um papel significativo nas rivalidades geopolíticas que levaram a conflitos, como a Primeira Guerra Mundial, e teve implicações duradouras nas relações internacionais e nas dinâmicas globais.','https://www.youtube.com/embed/8OZhwSCp_Z8?si=4stPXvyrs07xZLAb','6'),
+('Primeira Guerra Mundial','A Primeira Guerra Mundial, ocorrida de 1914 a 1918, é caracterizada por diversas propriedades históricas e geopolíticas. O conflito global, envolvendo as principais potências mundiais, desencadeou uma guerra de trincheiras marcada por alta mortalidade, devastação e inovações tecnológicas. O legado da guerra incluiu mudanças geopolíticas significativas, como o colapso de impérios, como o Austro-Húngaro e o Otomano, a criação da Liga das Nações como uma tentativa de prevenir futuros conflitos e sementes para o subsequente conflito da Segunda Guerra Mundial. A Primeira Guerra Mundial teve profundos impactos culturais e sociais, alterando a paisagem política da Europa e do mundo e moldando a geopolítica do século XX.','https://www.youtube.com/embed/EEOYAN2CWwM?si=27VrTxHMWgzKEm3b','6'),
+('Israel e Palestina','O conflito entre Israel e Palestina é um embate de longa data que envolve questões territoriais e étnicas. As disputas sobre territórios e recursos naturais afetam a distribuição de recursos hídricos, influenciando a gestão de água e sistemas de infraestrutura na região.','https://www.youtube.com/embed/t7LVfD8Rd5g?si=ew_oCIYFmARWL5vU','7'),
+('Mercosul','O Mercosul, ou Mercado Comum do Sul, é um bloco econômico que engloba diversos países da América do Sul. Este bloco visa promover a integração econômica, facilitar o comércio e a cooperação regional, impactando a logística de transporte e trocas comerciais entre os membros.','https://www.youtube.com/embed/HrR99NEs0n4?si=rbTv25BdpR42ZU7j','7'),
+('União Europeia','A União Europeia representa uma união política e econômica que abrange vários países europeus. A livre circulação de bens, pessoas e serviços, juntamente com a integração econômica, afeta as infraestruturas de transporte e comunicação na região.','https://www.youtube.com/embed/SwkC4-skNDM?si=NuLy3hsu2RTsDIma','7'),
+('Globalização','A globalização tem implicações significativas na física, uma vez que envolve a interconexão global de mercados e cadeias de suprimentos. As relações comerciais internacionais afetam o transporte de mercadorias, redes de comunicação e fluxos de energia, impactando nas redes globais.','https://www.youtube.com/embed/QGvwWyP1S4o?si=HBNCiYHn5jlYsowb','7'),
+('Movimentos Sociais','Os movimentos sociais são expressões coletivas de demandas por mudanças e justiça na sociedade. Originados em contextos de desigualdade e insatisfação, esses movimentos buscam transformar estruturas sociais e políticas. Podem abordar questões como direitos civis, ambientais e igualdade, exercendo impacto significativo na construção de uma sociedade mais justa e inclusiva.','https://www.youtube.com/embed/nu505BvywsU?si=vMJtBmNC-AUOiqv0','8'),
+('Escola de frankfurt','A Escola de Frankfurt, um grupo de pensadores críticos do século XX, concentrou-se na análise interdisciplinar da cultura e sociedade. Destacou-se pela abordagem crítica à cultura de massa e à alienação social. Suas ideias influenciaram o pensamento sociológico e filosófico, contribuindo para a compreensão das dinâmicas sociais e culturais contemporâneas.','https://www.youtube.com/embed/wsz3FMaEkkE?si=AonJ97YJCT3Z_Gqt','8'),
+('Max Weber e Ação social','Max Weber, sociólogo alemão, introduziu o conceito de "ação social". Ele explorou a compreensão das motivações individuais por trás das ações sociais e defendeu a importância da compreensão interpretativa na sociologia. Sua obra abrangeu temas como burocracia, ética protestante e o espírito do capitalismo, influenciando profundamente o pensamento sociológico.','https://www.youtube.com/embed/yeky1gJtFF0?si=cldHSkLdsVlYyXqZ','8'),
+('Ética e Moralidade','Ética e moral referem-se aos princípios que orientam o comportamento humano. A ética envolve reflexão e teorização sobre o que é certo e errado, enquanto a moral se relaciona com as normas e valores praticados em uma sociedade específica. Ambas são fundamentais para orientar escolhas individuais e coletivas, promovendo um comportamento ético e responsável.','https://www.youtube.com/embed/D0bgAJbwiwk?si=DLumWG6iCWMBhGNP','8'),
+('Cidadania', 'A cidadania representa a participação ativa e responsável dos indivíduos na sociedade. Envolve direitos e deveres civis, políticos e sociais, promovendo a inclusão e a construção coletiva. O exercício pleno da cidadania contribui para o fortalecimento da democracia e o desenvolvimento social, fundamentado na busca por igualdade e justiça.','https://www.youtube.com/embed/c3mjvCfwRxc?si=W07FZaeYziyBum-o','9'),
+('Mundo do Trabalho','O mundo do trabalho abrange as relações laborais e as dinâmicas econômicas que influenciam a vida das pessoas. Evolui em resposta a mudanças tecnológicas e sociais, impactando carreiras, empregabilidade e condições de trabalho. Compreender o mundo do trabalho é essencial para a adaptação a essas transformações e para a defesa de direitos trabalhistas.','https://www.youtube.com/embed/LQPffshbEvE?si=1Is3tLYZk6SmjpCY','9'),
+('Movimentos sociais','Os movimentos sociais são expressões coletivas de demandas por mudanças e justiça. Englobam uma variedade de causas, como direitos civis, ambientais e sociais. Essas mobilizações têm o poder de transformar a sociedade, reivindicando direitos, influenciando políticas públicas e promovendo debates cruciais para a evolução social.','https://www.youtube.com/embed/nu505BvywsU?si=ogLKnMsO51v_WMqA','9'),
+('Diversidade cultural','A diversidade cultural refere-se à multiplicidade de expressões culturais presentes em uma sociedade. Inclui diferentes formas de arte, tradições, línguas e identidades. Valorizar e respeitar a diversidade cultural promove o enriquecimento social, a compreensão mútua e contribui para a construção de sociedades mais inclusivas e plurais.','https://www.youtube.com/embed/CF-AFcwVGo4?si=q6SQztOu-5DgNQxH','9'),
+('Quinhentismo','O Quinhentismo representa o período literário que marca a produção escrita no Brasil durante o século XVI, especialmente após o descobrimento. Caracterizado pela influência das navegações e dos relatos de viagem, destaca-se pela presença de textos de caráter informativo e descritivo, explorando a exuberância da natureza e a peculiaridade do Novo Mundo.','https://www.youtube.com/embed/WULOzFYZ30g?si=elkArQsFNyb3mX4s','10'),
+('Barroco','O Barroco, predominante nos séculos XVII e XVIII, é um movimento literário marcado pela complexidade e pela dualidade de sentimentos. Caracteriza-se pelo uso elaborado da linguagem, pelo conflito entre o efêmero e o eterno, e pela expressão de emoções intensas. O culto à fugacidade da vida e as contradições humanas são temas recorrentes nesse período.','https://www.youtube.com/embed/BzuiijVviaE?si=ahL-WRNEjZPu1h69','10'),
+('Arcadismo','O Arcadismo, também conhecido como Neoclassicismo, surge no século XVIII e busca inspiração na simplicidade da natureza e na estética clássica. Representa uma reação ao Barroco, valorizando a razão, o equilíbrio e a busca por uma suposta Idade de Ouro. Os escritores árcades, muitas vezes sob pseudônimos pastoris, exploram temáticas bucólicas e idealizadas.','https://www.youtube.com/embed/svEGlGf5Zo4?si=XlSQKr7qCCuGhnpH','10'),
+('Romantismo','O Romantismo, do início do século XIX, enfatiza a liberdade criativa e a expressão individual. Marcado pela subjetividade, emoção e idealização do amor, os românticos celebram a natureza, o nacionalismo e a rebeldia contra normas estabelecidas. A busca pelo exótico, o escapismo e a valorização do eu são características desse movimento.','https://www.youtube.com/embed/PyUy_9mKGCk?si=xWFW1nlbEN6iDT4C','10'),
+('Much e Many ','Much e Many são determinantes utilizados para expressar quantidade em inglês. "Much" é usado com substantivos incontáveis, enquanto "Many" é empregado com substantivos contáveis. Esses termos desempenham um papel crucial na precisão da comunicação, ajudando a transmitir a quantidade de maneira adequada, seja em perguntas, negações ou afirmações.','https://www.youtube.com/embed/Ff4pmSCf5sM?si=vPltMThReonKr3pc','11'),
+('Present Continuous','O Present Continuous, também conhecido como presente contínuo em inglês, é um tempo verbal que indica ações em curso no momento da fala. Formado pelo verbo "to be" conjugado no presente e o gerúndio do verbo principal, esse tempo verbal é essencial para descrever atividades em andamento e situar o interlocutor no tempo presente.','https://www.youtube.com/embed/N59dxrYoUQs?si=wYILxAkmtzkXgDCj','11'),
+('Simple Past','O Present Perfect é um tempo verbal em inglês que expressa ações ocorridas em um passado recente ou que possuem relevância no presente. Formado pelo presente do verbo "to have" e o particípio passado do verbo principal, esse tempo é usado para narrar experiências de vida, conquistas ou mudanças ocorridas até o momento presente.','https://www.youtube.com/embed/RYAmGVI_C_4?si=H-w7kzI_lN2VT4T7','11'),
+('Present Perfect','O Past Perfect é um tempo verbal que indica a conclusão de uma ação passada antes de outra ação também passada. Formado pelo passado do verbo "to have" e o particípio passado do verbo principal, esse tempo verbal estabelece uma sequência temporal clara, enfatizando qual das ações ocorreu primeiro.','https://www.youtube.com/embed/84fgUnZidzU?si=JIocKefbAsWLQLfU','11')
+
+select * from conteudos
+
+insert into questoes
+(nome_quest, enunciado_quest, cont_id)
+values 
+('Questão 1','(FGV) Assinale a alternativa em que a regência verbal está de acordo com a norma culta.', '1'),
+('Questão 2','(ESPM) Embora de ocorrência frequente no cotidiano, a gramática normativa não aceita o uso do mesmo complemento para verbos com regências diferentes. Esse tipo de transgressão só não ocorre na frase:', '1'),
+('Questão 3','(FEI) Assinale a alternativa em que haja erro de regência verbal:', '1'),
+('Questão 4','(Fiocruz) Assinale a frase onde a regência do verbo assistir está errada.', '1'),
+('Questão 1','(FCC) Elas _____ providenciaram os atestados, que enviaram _____ às procurações, como instrumentos _____ para os fins colimados.', '2'),
+('Questão 2','(UFSC) Marque a única frase onde a concordância nominal aparece de maneira inadequada.', '2'),
+('Questão 3','(PUC-Campinas) A frase em que a concordância nominal está INCORRETA é:', '2'),
+('Questão 4','(FCC-BA) "Água às refeições é ________ para a saúde. Essa é uma das muitas precauções que ________ tomar, se se quer conservar a silhueta."', '2'),
+('Questão 1','(CESCEM–SP) Já ___ anos, ___ neste local árvores e flores. Hoje, só ___ ervas daninhas.', '3'),
+('Questão 2','(Cesgranrio) Tendo em vista as regras de concordância, assinale a opção em que a forma verbal está errada:', '3'),
+('Questão 3','(Fatec) Assinale a alternativa que completa corretamente as frases.', '3'),
+('Questão 4','QUESTÃO 4:(FCC) A ocorrência de interferências ___ -nos a concluir que ___ uma relação profunda entre homem e sociedade que os ___ mutuamente dependentes.', '3'),
+('Questão 1','Indique as relações semânticas estabelecidas pelos conectivos em destaque:
+I. Como a chuva estava muito forte, não foi possível continuar o show.
+II. Eu não consegui apresentar o trabalho porque estava muito nervosa!
+III. Os manifestantes terão suas reivindicações atendidas, exceto se usarem de violência.
+IV. Estava doente, mas foi trabalhar.
+V. Os brasileiros são tão trabalhadores quanto os norte-americanos.
+', '4'),
+('Questão 2','(Enem - 2013)
+Gripado, penso entre espirros em como a palavra gripe nos chegou após uma série de contágios entre línguas. Partiu da Itália em 1743 a epidemia de gripe que disseminou pela Europa, além do vírus propriamente dito, dois vocábulos virais: o italiano influenza e o francês grippe. O primeiro era um termo derivado do latim medieval influentia, que significava “influência dos astros sobre os homens”. O segundo era apenas a forma nominal do verbo gripper, isto é, “agarrar”. Supõe-se que fizesse referência ao modo violento como o vírus se apossa do organismo infectado. 
+RODRIGUES. S. Sobre palavras. Veja, São Paulo, 30 nov. 2011.
+Para se entender o trecho como uma unidade de sentido, é preciso que o leitor reconheça a ligação entre seus elementos. Nesse texto, a coesão é construída predominantemente pela retomada de um termo por outro e pelo uso da elipse. O fragmento do texto em que há coesão por elipse do sujeito é:
+', '4'),
+('Questão 3','(Enem – 2011)
+Cultivar um estilo de vida saudável é extremamente importante para diminuir o risco de infarto, mas também de problemas como morte súbita e derrame. Significa que manter uma alimentação saudável e praticar atividade física regularmente já reduz, por si só, as chances de desenvolver vários problemas. Além disso, é importante para o controle da pressão arterial, dos níveis de colesterol e de glicose no sangue. Também ajuda a diminuir o estresse e aumentar a capacidade física, fatores que, somados, reduzem as chances de infarto. Exercitar-se, nesses casos, com acompanhamento médico e moderação, é altamente recomendável.
+ATALIA, M. Nossa vida. Época. 23 mar. 2009.
+As ideias veiculadas no texto se organizam estabelecendo relações que atuam na construção do sentido. A esse respeito, identifica-se, no fragmento, que
+', '4'),
+('Questão 4','Sobre a coesão textual, estão corretas as seguintes proposições:
+I. A coesão textual está relacionada com os componentes da superfície textual, ou seja, as palavras e frases que compõem um texto. Esses componentes devem estar conectados entre si em uma sequência linear por meio de dependências de ordem gramatical.
+II. A coesão é imaterial e não está na superfície textual. Compreender aquilo que está escrito dependerá dos níveis de interação entre o leitor, o autor e o texto. Por esse motivo, um mesmo texto pode apresentar múltiplas interpretações.
+III. Por meio do uso adequado dos conectivos e dos mecanismos de coesão, podemos evitar erros que prejudicam a sintaxe e a construção de sentidos do texto.
+IV. A coesão obedece a três princípios: o princípio da não contradição; princípio da não tautologia e o princípio da relevância.
+V. Entre os mecanismos de coesão estão a referência, a substituição, a elipse, a conjunção e a coesão lexical.
+', '4'),
+
+('Questão 1','O valor de x que satisfaz a equação é:
+3x+4=5x−8
+', '5'),
+('Questão 2','A quantidade de figurinhas que Renata tem mais 8 é igual ao dobro da quantidade de figurinhas que Rogério tem menos 12. Se Rogério possui 20 figurinhas, então o número de figurinhas que Renata possui é igual a:', '5'),
+('Questão 3','A soma dos ângulos internos de um triângulo é sempre igual a 180°. Se um ângulo desse triângulo mede 3x + 4°, o outro ângulo mede 2x – 15°. Se a medida do terceiro ângulo é 86°, então o valor de x é:', '5'),
+('Questão 4','Raul e Kárita têm, juntos, R$ 210.000,00 para fazer um investimento. A quantia que Raul possui é três quartos da quantia que Kárita possui. Qual é o valor a ser investido por Kárita?', '5'),
+('Questão 1','Analisando a equação do segundo grau x² – 2x +1 = 0, podemos afirmar que ela possui:', '6'),
+('Questão 2','Uma região retangular teve as suas dimensões descritas em metros, conforme a imagem a seguir:', '6'),
+('Questão 3','Uma equação foi descrita da seguinte maneira:
+(k² – 4) x³ + ( k – 2 )x² + 7x - 8 = 0
+Analisando os coeficientes, o valor de k que faz com que essa equação seja uma equação do 2º grau é:
+', '6'),
+('Questão 4','Das equações quadráticas abaixo e sabendo que a = 1, qual é a equação que possui as soluções x1 = 2 e x2 = - 3?', '6'),
+('Questão 1','Uma loja de utensílios domésticos oferece um conjunto de talheres por um preço que depende da quantidade comprada. Estas são as opções:
+Opção A: R$ 94,80 mais R$ 2,90 a unidade avulsa.
+Opção B: R$ 113,40 mais R$ 2,75 a unidade avulsa.
+A partir de quantos talheres avulsos comprados a opção A é menos vantajosa que a opção B.
+', '7'),
+('Questão 2','Carlos está negociando um terreno com uma imobiliária. O terreno A, fica em uma esquina e possuí a forma de um triângulo. 
+A imobiliária também está negociando uma faixa de terra na forma de um retângulo determinado pela seguinte condição: o cliente pode escolher a largura, mas o comprimento deverá possuir cinco vezes esta medida.
+A medida da largura do terreno B para que este tenha uma área maior que a do terreno A é', '7'),
+('Questão 3','Uma concessionária de automóveis decidiu mudar a política de pagamentos de seus vendedores. Estes recebiam um salário fixo por mês, e agora a empresa propõe duas formas de pagamentos. 
+A opção 1 oferece um pagamento fixo de R$ 1 000,00 mais uma comissão de R$ 185,00 por carro vendido. 
+A opção 2 oferece um salário de R$ 2 045,00 mais uma comissão de R$ 90,00 por carro vendido. A partir de quantos carros vendidos a opção 1 passa a ser mais lucrativa que a opção 2?', '7'),
+('Questão 4','Em uma loja de roupas uma promoção diz que se um cliente comprar uma peça, ele pode levar uma segunda, igual a primeira, por um terço do valor. 
+Se um cliente tem R$ 125,00 e quer aproveitar a promoção, o preço máximo da primeira peça que ele pode comprar, para poder levar também a segunda, é', '7'),
+('Questão 1','Durante uma visita à padaria, Kárita comprou 2 pedaços de bolo de cenoura e uma dose de café, pagando, ao todo, R$ 3,50. Sua irmã, Karla, 
+comprou 1 pedaço de bolo de cenoura e 2 doses de café, pagando um total de R$ 2,50. Analisando essa situação, se uma pessoa comprar 1 pedaço de bolo de cenoura e 1 café, o valor pago por ela será de:', '8'),
+('Questão 2','Em um estacionamento, há motos e carros, em um total de 25 veículos. Sabendo há 74 rodas nesse estacionamento, podemos afirmar que', '8'),
+('Questão 3','Matheus tem um total de R$ 115,00 em notas de R$ 5,00 e de R$ 20,00. Considerando que ele possui um total de 11 cédulas, a quantidade de notas de R$ 5,00 que ele possui a mais que as de R$ 20,00 é igual a:', '8'),
+('Questão 4','Sabe-se x e y são as incógnitas do seguinte sistema linear:
+O valor do produto entre x e y é:
+', '8'),
+
+('Questão 1','(FEEQ – CE)
+O selênio e o enxofre pertencem à família VI A da tabela periódica. Sendo assim, o seleneto e o sulfeto de hidrogênio são representados, respectivamente pelas fórmulas:
+', '9'),
+('Questão 2','(FUVEST)
+As unidades constituintes dos sólidos: óxido de magnésio (MgO), iodo (I2) e platina (Pt) são, respectivamente:
+', '9'),
+('Questão 3','Para interpretar as propriedades das diversas substâncias é necessário conhecer as ligações entre os átomos e as ligações entre as respectivas moléculas. Em relação à ligação entre átomos pode afirmar-se que:', '9'),
+('Questão 4','(UEMG) As propriedades exibidas por um certo material podem ser explicadas pelo tipo de ligação química presente entre suas unidades formadoras. Em uma análise laboratorial, um químico identificou para um certo material as seguintes propriedades:', '9'),
+('Questão 1','Indique qual das alternativas a seguir mostra uma reação de análise:', '10'),
+('Questão 2','O consumo de ácido sulfúrico pode ser utilizado como um indicador do desenvolvimento de um país. Industrialmente, esse ácido pode ser obtido a partir da pirita de ferro, que consiste basicamente em sulfeto ferroso (FeS). Classifique as equações de obtenção industrial do ácido sulfúrico:', '10'),
+('Questão 3','(FEI-SP) As equações químicas:
+Zn + 2 HCl → ZnCl2 + H2
+P2O5+ 3 H2O → 2 H3PO4
+AgNO3 + NaCl → AgCl + NaNO3
+CaO + CO2 → CaCO3
+N2O4 → 2 NO2
+Representam, respectivamente, reações de:
+', '10'),
+('Questão 4','(UFMG) Colocando-se um frasco de ácido clorídrico junto a outro de amônia e retirando-se as rolhas de ambos, nota-se a formação de fumaça branca intensa, constituída de cloreto de amônio (HCl + NH3 → NH4Cl).
+Esta experiência é um exemplo de:
+', '10'),
+('Questão 1','(UFMG-MG) Considere as seguintes equações:
+I.HCℓ + NaOH → NaCℓ + H2O
+II.H2 + ½ O2 → H2O
+III.SO3+ H2O → H2SO4
+Ocorre oxirredução apenas em:
+', '11'),
+('Questão 2','A equação em que não ocorre reação de oxirredução é:', '11'),
+('Questão 3','(Cesgranrio-RS) Observe a reação:
+SnCl2 + 2 HCl + H2O2 → SnCl4 + 2 H2O.
+A partir dela, podemos afirmar corretamente que:
+', '11'),
+('Questão 4','Considere a seguinte equação que representa uma equação de oxirredução:
+2 H2O + 2F2 → 4 HF + O2
+Determine respectivamente a substância oxidada e a reduzida:
+', '11'),
+('Questão 1','Submetida a um tratamento medico, uma pessoa ingeriu um comprimido contendo 45 mg de acido acetilsalicilico (C9H8O4). Considerando a massa molar de C9H8O4 180g/mol e o numero de avogadro 6,0.10²³ qual o numero de moleculas da substancia ingerida?', '12'),
+('Questão 2','(Unicid-SP) Um químico possui uma amostra de cobre (dado: 6429Cu). A massa, em gramas, dessa amostra, sabendo-se que ela é constituída por 3,01 . 1023 átomos, é:', '12'),
+('Questão 3','Qual é a massa, em gramas, de uma molécula de etano (C2H6):', '12'),
+('Questão 4','A massa, em gramas, e o número de átomos existente em 8,0 mol de átomos de mercúrio (MA = 200) são:', '12'),
+
+('Questão 1','Uma ave migratória consegue voar enormes distâncias. 
+Suponha que ela consiga voar com velocidade constante de 10 m/s durante o período de uma semana. Qual terá sido a distância, em quilômetros, percorrida pela ave durante esse período?', '13'),
+('Questão 2','Um navio cargueiro completamente carregado tem uma massa de 1,5. 105 kg. 
+Sabendo que esse navio percorre uma distância de 4000 km em 30 dias com velocidade constante, calcule o valor da força resultante sobre o navio durante o percurso.', '13'),
+('Questão 3','No instante de tempo t0, um corpo encontra-se na posição 3 m com relação a um sistema de referência, movendo-se com uma velocidade de 10 m/s. 
+A alternativa que representa corretamente a função horária da posição desse móvel é:', '13'),
+('Questão 4','Com relação a um corpo que descreve um movimento retilíneo e uniforme, assinale a alternativa correta.', '13'),
+('Questão 1','Um móvel parte do repouso e desenvolve uma aceleração constante de 3 m/s² durante 4 segundos. O deslocamento desse móvel foi de:', '14'),
+('Questão 2','Um motorista dirige seu carro a uma velocidade de 108 km/h quando avista a placa de pare. Ao acionar os freios, ocorre uma desaceleração constante, e o carro leva um tempo de 3,0 s até parar completamente. 
+A distância percorrida pelo automóvel até a frenagem total é de:', '14'),
+('Questão 3','A função horária da posição de um ponto material, dada em unidades do Sistema Internacional, que se move com aceleração constante é fornecida a seguir:
+S = 15 + 10.t + 2.t²
+Sua velocidade inicial, posição inicial e aceleração são respectivamente iguais a:
+', '14'),
+('Questão 4','Certo móvel, inicialmente na velocidade de 3 m/s, acelera constantemente a 2 m/s2 até se distanciar 4 m de sua posição inicial. 
+O intervalo de tempo decorrido até o término desse deslocamento foi de:', '14'),
+('Questão 1','Analise as afirmações a respeito da inércia e marque a alternativa falsa:', '15'),
+('Questão 2','Analise as afirmações feitas a respeito das leis de Newton.
+I) É possível definir a segunda lei de Newton em função da quantidade de movimento.
+II) Um objeto depositado sobre uma superfície qualquer sofrerá a ação da força Normal como reação à força Peso.
+III) A massa é a grandeza que representa a dificuldade imposta por um corpo à mudança de seu estado inicial.
+IV) A unidade de medida para força é kg.m.s – 2.
+V) Ação e reação sempre possuem o mesmo sentido.
+Marque a alternativa correta:
+', '15'),
+('Questão 3','O peso de um objeto na lua é de 48 N. Determine o peso desse objeto na Terra.
+Dados: Gravidade da Terra = 10 m/s2; Gravidade da lua = 1,6 m/s2.
+', '15'),
+('Questão 4','Um veículo de massa de 800 kg entra em uma curva de raio igual a 200 m, com uma velocidade de 72 km/h. Determine o módulo da força centrípeta produzida pelo contato dos pneus do veículo com o solo.', '15'),
+('Questão 1','(UFSM) A figura representa dois atletas numa corrida, percorrendo uma curva circular, cada um em uma raia. 
+Eles desenvolvem velocidades lineares com módulos iguais e constantes, num referencial fixo no solo. Atendendo à informação dada, assinale a resposta correta.', '16'),
+('Questão 2','Um carro de corrida percorre uma pista circular com velocidade constante de 180 km/h e aceleração centrípeta de 25 m/s2. Com base nessas informações, podemos afirmar que o raio dessa pista é igual a:', '16'),
+('Questão 3','Um carro de 1000 kg de massa entra, a 30 m/s, em uma curva de raio igual a 300 m, contida em uma superfície horizontal. 
+Determine o módulo do coeficiente de atrito estático entre os pneus do carro e o asfalto, para que esse veículo não derrape.', '16'),
+
+('Questão 1','As verminoses são doenças causadas por vermes, ou seja, doenças causadas por nematoides e platelmintos. Entre as doenças descritas a seguir, qual delas é uma verminose causada por um platelminto?', '17'),
+('Questão 2','Ingerir carne bem passada é uma forma de evitar um tipo de verminose. Analise as alternativas e marque a verminose que pode ser prevenida dessa forma:', '17'),
+('Questão 3','Das verminoses descritas a seguir, qual é contraída por meio da penetração de larvas na pele quando em contato com solo contaminado?', '17'),
+('Questão 4','(UFSM) Sobre os invertebrados causadores de doenças nos seres humanos, analise as afirmativas a seguir:
+I. Se uma pessoa, por meio do consumo de carne crua, ingerir ovos de tênia, um nematódeo como a lombriga, ela pode contrair a “teníase”.
+II. As principais medidas preventivas da esquistossomose, conhecida popularmente com “barriga d’água” e causada por um verme platelminto, consistem em: construir instalações sanitárias adequadas que impeçam a contaminação de corpos d’água por ovos do esquistossomo; combater o caramujo transmissor; evitar o contato com água onde haja caramujos transmissores.
+III. A ascaridíase é causada pela lombriga, um verme nematódeo, sendo a construção de instalações sanitárias adequadas e o uso de calçados as principais medidas preventivas da doença.
+Está(ão) correta(s):
+', '17'),
+('Questão 1','Uma fita de DNA apresenta a seguinte sequência:
+TCAAGT
+Marque a alternativa que indica corretamente a sequência encontrada na fita complementar:
+', '18'),
+('Questão 2','Marque a alternativa que melhor define um gene.', '18'),
+('Questão 3','Sabemos que existem diferentes tipos de RNA. Analise as alternativas abaixo e marque aquela que apresenta o nome correto da classe de RNA que é responsável por codificar as proteínas e ter seus códons lidos na tradução.', '18'),
+('Questão 4','Sabemos que existem três tipos básicos de RNA. Observe cada uma das alternativas abaixo e indique aquela que apresenta a função do RNA transportador.', '18'),
+('Questão 1','A tradução gênica é o processo no qual ocorre a síntese de uma cadeia polipeptídica. Ele se inicia quando ocorre o emparelhamento de um RNAt que transporta metionina com o códon de início de tradução localizado em um RNAm. 
+Marque a alternativa que indica corretamente o códon que marca o início da síntese proteica.', '19'),
+('Questão 2','O RNAm possui uma série de bases nitrogenadas, formando os códons, que determinarão a sequência de aminoácidos de uma proteína. No RNAm encontraremos códons que marcam o início da síntese e também aqueles que indicam a sua parada. Existem três códons que simbolizam a parada da síntese, enquanto a iniciação é indicada sempre pelo mesmo códon.
+Entre as alternativas abaixo, marque aquela que não indica um códon de parada.
+', '19'),
+('Questão 3','Algumas vezes em um RNAm são encontrados diversos ribossomos traduzindo-o simultaneamente. O RNAm, juntamente com os ribossomos, são chamados de:', '19'),
+('Questão 4','(Ufam) A produção de uma proteína é processada basicamente em duas fases. Observando o esquema abaixo, encontre a alternativa correspondente:
+Gene (DNA) → RNA → Proteínas
+', '19'),
+('Questão 1','No sistema ABO, observamos a existência de quatro tipos de sangue: A, B, AB e O. Esses quatro tipos sanguíneos são determinados por quantos alelos?', '20'),
+('Questão 2','Observe a tabela e marque a alternativa que completa adequadamente os espaços indicados por números:', '20'),
+('Questão 3','Nos eritrócitos humanos existem antígenos denominados de M e N, que constituem o chamado Sistema MN descoberto por Landsteiner e Levine. 
+Marque a alternativa que indica corretamente o número de genótipos e fenótipos possíveis desse sistema.', '20'),
+('Questão 4','O Fator Rh foi descoberto em 1940 e revolucionou a medicina, pois respondeu ao enigma a respeito da destruição de hemácias em transfusões e da doença hemolítica do recém-nascido. 
+A respeito desse fator, marque a alternativa incorreta.', '20'),
+
+
+('Questão 1','A Primeira República ficou muito marcada por diferentes movimentos sociais e pequenos conflitos que eclodiram, manifestando a insatisfação popular e os diferentes interesses em disputa em nossa sociedade. 
+Entre os movimentos listados a seguir, qual não se passou durante a Primeira República:', '21'),
+('Questão 2','determinada política, iniciada por Campos Sales no Brasil, que “reconhecia a plena autonomia das elites regionais, fazia vista grossa aos esbulhos cometidos por essas elites para eleger as bancadas e o governo estadual, acenava com benesses do Tesouro e apresentava a fatura: as unidades da federação deveriam agir coesas e em consonância com o poder central”.
+SCHWARCZ, Lilia Moritz e STARLING, Heloísa Murgel. Brasil: Uma Biografia. São Paulo: Companhia das Letras, 2015, p. 321.
+As historiadoras mencionavam a que prática da nossa política:
+', '21'),
+('Questão 3','O estopim que deu início à Revolta Armada, que levou ao fim da Primeira República, foi:', '21'),
+('Questão 4','A violência contra os pobres, o racismo e os castigos físicos foram fatores que deram início à:', '21'),
+('Questão 1','A atuação da imprensa na articulação do golpe civil-militar que resultou na deposição de João Goulart e no início da Ditadura Militar com a implantação do AI-1 e da eleição indireta de Humberto 
+Castello Branco, deu-se por meio da:', '22'),
+('Questão 2','A partir de 1968, a Ditadura Militar ampliou o seu aparato repressor, concluindo esse processo de fechamento do regime com o decreto do AI-5. Em diversas frentes, a repressão da ditadura atuou para reprimir os movimentos sociais, como o estudantil, o operário ou até mesmo a demonstração de oposições entre os próprios deputados. O fechamento do regime fez com que muitos opositores se lançassem à resistência armada, movimento que atuou para derrubar a ditadura pela via armada, entre 1968 e 1973. 
+Dos nomes listados abaixo, selecione aquele que NÃO se envolveu com a resistência armada:', '22'),
+('Questão 3','A partir do AI-2, o Brasil teve um sistema bipartidário, o que determinava que somente dois partidos políticos poderiam existir no país. 
+Um partido representava o regime, enquanto o outro atuava como uma oposição consentida. A sigla desses dois partidos era:', '22'),
+('Questão 4','Enem/2016) A Operação Condor está diretamente vinculada às experiências históricas das ditaduras civil-militares que se disseminaram pelo Cone Sul entre as décadas de 1960 e 1980. Depois do Brasil (e do Paraguai de Stroessner), foi a vez da Argentina (1966), Bolívia (1966 e 1971), Uruguai e Chile (1973) e Argentina (novamente, em 1976). Em todos os casos se instalaram ditaduras civil-militares (em menor ou maior medida) com base na Doutrina de Segurança Nacional e tendo como principais características um anticomunismo militante, a identificação do inimigo interno, a imposição do papel político das Forças Armadas e a definição de fronteiras ideológicas.
+PADRÓS, E. S. et al. Ditadura de Segurança Nacional no Rio Grande do Sul (1964-1985):
+história e memória. Porto Alegre: Corag, 2009 (adaptado).
+Levando-se em conta o contexto em que foi criada, a referida operação tinha como objetivo coordenar a
+', '22'),
+('Questão 1','A política imperialista consistia na busca, principalmente, de novos mercados consumidores para os países industrializados e foi assim que vários países da África e da Ásia sofreram com a prática da neocolonização nos séculos XIX e XX. 
+Portanto, sobre a justificativa construída pelas potências europeias para invadir as nações do continente africano e asiático é correto dizer que:', '23'),
+('Questão 2','(UFPE - 2002) A expansão capitalista no século XIX ficou conhecida como imperialismo, e o domínio dos países europeus sobre a África e a Ásia foi denominado neocolonialismo. 
+Sobre o resultado da junção desses dois fenômenos – o imperialismo e o colonialismo – na África e na Ásia, é correto afirmar que:', '23'),
+('Questão 1','O genocídio armênio foi promovido durante os anos da Primeira Guerra Mundial, resultando na morte de mais de um milhão de pessoas. Esse genocídio foi cometido por qual país?', '24'),
+('Questão 2','Quanto às imposições militares que o Tratado de Versalhes realizou sobre a Alemanha, selecione a alternativa INCORRETA.', '24'),
+('Questão 3','Qual motivo serviu como justificativa para a entrada dos Estados Unidos na Primeira Guerra Mundial?', '24'),
+('Questão 4','Selecione a alternativa que apresenta uma fase da Primeira Guerra Mundial.', '24'),
+
+('Questão 1','TEXTO I
+“O Hamas tem dois grandes aliados: um número maior de mortos e o ódio covarde a Israel. É um ódio dissimulado, sem coragem de dizer seu nome, que usa os corpos de mulheres e crianças como escudo moral, mas que mal esconde sua natureza. Sessenta e seis anos depois da "partilha", renegada, então, pelo mundo árabe – e só por isso surgiu uma "causa palestina"–, eis que Israel continua a lutar por sua sobrevivência. Já teria sido "varrido do mapa" se, confiante na paz, não houvesse se preparado para a guerra”.
+AZEVEDO, R. Ódio a Israel. Folha de S. Paulo, 01 ago. 2014. Disponível em: http://www1.folha.uol.com.br/colunas/reinaldoazevedo. Acesso em: 19 jun. 2015.
+TEXTO II
+“Israel foi concebido no rearranjo entre as grandes potências que se seguiu à Segunda Guerra Mundial. É uma obra artificial, construída desde o início com mortes, expulsões, humilhações e convulsões. Os palestinos desalojados e tratados como cidadãos de segunda classe nunca deixaram de lutar contra a opressão. Batalha inglória. Tratou-se sempre, como atualmente, de um combate contra interesses muito maiores do que a extensão geográfica da região faz supor”.
+MELO, R. Israel é aberração; os judeus, não. Folha de S. Paulo, 28 jul. 2014. Disponível em: http://www1.folha.uol.com.br/colunas/ricardomelo. Acesso em: 19 jun. 2015.
+Os textos acima refletem opiniões distintas acerca do histórico conflito entre Israel e Palestina. Os pontos de vista inscrevem-se em linhas argumentativas que salientam, respectivamente,
+', '25'),
+('Questão 2','Ao longo de vários períodos da história e, principalmente, durante o século XX, os judeus intensificaram sua busca e migração em prol da ocupação da região que consideram como a Terra Prometida. Mais tarde, a criação do Estado de Israel nessa área esteve entre os vários fatores que desencadearam a discórdia com os palestinos, que também habitam a região.
+A busca ideológica e religiosa dos judeus pela terra que consideram ser sagrada é chamada de:
+', '25'),
+('Questão 3','Disponível em: https://brasilescola.uol.com.br/geografia/questao-palestina.htm. Acesso em: 19 jun. 2015.
+No âmbito da Partilha da Palestina, realizada após uma série de debates e acordos diplomáticos, a cidade de Jerusalém seria considerada
+', '25'),
+('Questão 4','(IFBA)
+“Os Estados Árabes se consideram em estado de guerra com Israel e, desde 1948, não cessam de proclamar sua vontade de lançar os israelitas no mar e de riscar seu Estado do mapa do Oriente próximo (...).”
+FRIEDMANN, Georges. Fim do povo judeu? São Paulo: Perspectiva, 1969, p. 243.
+Iniciado em 1848, o conflito palestino-israelense constituiu, no Oriente Médio, o que se convencionou chamar de Questão Palestina, que está longe de ser resolvida, ainda hoje, e pode ser relacionada à
+', '25'),
+('Questão 1','O Mercosul é formado atualmente por quatro países-membros. Qual dos países abaixo NÃO faz parte do bloco?', '26'),
+('Questão 2','Além dos quatro países-membros, o Mercosul possui um conjunto de países associados, que participam indiretamente das políticas empreendidas pelo bloco. Um membro associado do Mercosul é o', '26'),
+('Questão 3','O principal objetivo do Mercosul, a partir da sua fundação, era estabelecer uma', '26'),
+('Questão 4','A maior economia do Mercosul tem um parque fabril muito diversificado e é uma grande exportadora de bens primários. O comércio com os demais países do bloco prioriza a troca de bens manufaturados e serviços diversos. Atualmente, apesar da grave crise econômica, ainda é uma das principais economias do mundo.
+Qual país descrito no texto é a maior economia do Mercosul?
+', '26'),
+('Questão 1','O Benelux é considerado o embrião para a formação da União Europeia. Quais países formavam esse agrupamento?', '27'),
+('Questão 2','Em 1952 ocorreu o principal marco da fundação do bloco econômico que deu origem à União Europeia. A chamada Europa dos Seis também é corretamente denominada de:', '27'),
+('Questão 3','O processo de consolidação do bloco europeu ocorreu ao longo de um grande recorte temporal, marcado por questões políticas e econômicas, que resultou em uma formação de 27 países. Qual o último país europeu que ingressou na União Europeia?', '27'),
+('Questão 4','As relações políticas entre a União Europeia e a Rússia, herdeira política da União Soviética, são adversas, devido a questões políticas e econômicas. Porém, a União Europeia contempla três países que fizeram parte da antiga União Soviética. Quais são eles?', '27'),
+('Questão 1','A globalização é um processo contínuo de integração, em especial, econômica do globo. 
+Para tal, torna-se necessário a disponibilidade de ferramentas que permitem a organização das redes e dos fluxos entre as diferentes regiões do mundo. 
+Desse modo, pode-se apontar que a globalização está amparada no', '28'),
+('Questão 2','As atividades industriais da globalização estão extremamente internacionalizadas e são baseadas em ferramentas tecnológicas de produção e comercialização. 
+Sendo assim, destacam-se, no processo de globalização, as empresas ligadas à', '28'),
+('Questão 3','Com relação ao espaço mundial, o processo de globalização provoca uma homogeneização da produção e do consumo em nível global, 
+porém esse processo não é uniforme em todo o planeta. Desse modo, pode-se afirmar que a globalização resultou na', '28'),
+('Questão 4','A globalização provocou profundas mudanças nos sistemas globais de produção. É uma característica desse sistema a', '28'),
+
+('Questão 1','Na sociedade democrática, indivíduos e grupos organizam-se em associações, movimentos sociais e populares, classes se organizam em sindicatos e partidos, criando um contra-poder social que, direta ou indiretamente, limita o poder do Estado.
+Marilena Chauí, Convite à Filosofia
+Nesse sentido, a importância dos movimentos sociais para as reivindicações de grupos minoritários se dá porque:
+', '29'),
+('Questão 2','Qual das organizações abaixo não se configura como um movimento social?', '29'),
+('Questão 3','O movimento “Diretas Já” foi uma mobilização popular iniciada em 1983. O movimento reivindicava a:', '29'),
+('Questão 4','O Movimento dos Trabalhadores Rurais Sem Terra (MST), existente desde a década de 1970, é um movimento social que possui como uma das pautas centrais a:', '29'),
+('Questão 1','(UEL) Leia o texto a seguir.
+À medida que as obras de arte se emancipam do seu uso cultual, aumentam as ocasiões para que elas sejam expostas. A exponibilidade de um busto [...] é maior que de uma estátua divina, que tem sua sede fixa no interior do templo. [...] a preponderância absoluta conferida hoje a seu valor de exposição atribui-lhe funções inteiramente novas, entre as quais a “artística”, a única de que temos consciência, talvez se revele mais tarde como rudimentar.
+BENJAMIN, Walter. “A obra de arte na era da sua reprodutibilidade técnica (Primeira versão)”. In: Obras escolhidas I. Trad. Sérgio Paulo Rouanet, 8ª ed. São Paulo: Brasiliense, 2012. p. 187-188.
+Com base no texto e nos conhecimentos sobre a teoria benjaminiana da reprodutibilidade técnica e do valor cultual e de exposição da obra de arte, assinale a alternativa correta.
+', '30'),
+('Questão 2','(UNESP) Uma obra de arte pode denominar-se revolucionária se, em virtude da transformação estética, representar, no destino exemplar dos indivíduos, a predominante ausência de liberdade, rompendo assim com a realidade social mistificada e petrificada e abrindo os horizontes da libertação. Esta tese implica que a literatura não é revolucionária por ser escrita para a classe trabalhadora ou para a “revolução”. O potencial político da arte baseia-se apenas na sua própria dimensão estética. A sua relação com a práxis (ação política) é inexoravelmente indireta e frustrante. Quanto mais imediatamente política for a obra de arte, mais reduzidos são seus objetivos de transcendência e mudança. Nesse sentido, pode haver mais potencial subversivo na poesia de Baudelaire e Rimbaud que nas peças didáticas de Brecht.
+(Herbert Marcuse. A dimensão estética, s/d.)
+Segundo o filósofo, a dimensão estética da obra de arte caracteriza-se por:
+', '30'),
+('Questão 3','(UEL) Texto III
+A sociedade contemporânea convive com os riscos produzidos por ela mesma e com a frustração de, muitas vezes, não saber distinguir entre catástrofes que possuem causas essencialmente naturais e aquelas ocasionadas a partir da relação que o homem trava com a natureza. Os custos ambientais e humanos do desenvolvimento da técnica, da ciência e da indústria passam a ser questionados a partir de desastres contemporâneos como AIDS, Chernobyl, aquecimento global, contaminação da água e de alimentos pelos agrotóxicos, entre outros.
+(Adaptado de: LIMA, M. L. M. A ciência, a crise ambiental e a sociedade de risco. Senatus. v.4. n.1. nov. 2005. p.42-47.)
+Leia o texto a seguir.
+O mito converte-se em esclarecimento e a natureza em mera objetividade. O preço que os homens pagam pelo aumento de seu poder é a alienação daquilo sobre o que exercem o poder. O esclarecimento comporta-se com as coisas como o ditador se comporta com os homens. Este os conhece na medida em que pode manipulá-los. O homem de ciência conhece as coisas na medida em que pode fazê-las. É assim que seu em-si torna para- -ele. Nessa metamorfose, a essência das coisas revela-se como sempre a mesma, como substrato de dominação.
+(ADORNO; HORKHEIMER. Dialética do Esclarecimento. Rio de Janeiro: Jorge Zahar, 1985. p.21.)
+O uso da razão para fins irracionais criou, principalmente no século XX, uma desconfiança crônica a respeito da sua natureza e dos seus usos. Com base nos conhecimentos sobre a racionalidade instrumental presente no texto, assinale a alternativa correta.
+', '30'),
+('Questão 4','(Unioeste) Em seu artigo Max Horkheimer: teoria crítica e materialismo interdisciplinar (2011), o filósofo Luís Sérgio Repa afirma que a teoria crítica procurou reintegrar a razão pelas promessas não cumpridas pelo Iluminismo. Entre os pensadores ligados a Escola de Frankfurt, Max Horkheimer se destacou por ter sistematizado e teorizado a teoria crítica, além de ter formulado um programa de pesquisa. 
+Entre os principais fundamentos teóricos da teoria crítica frankfurtiana, assinale a alternativa correta.', '30'),
+('Questão 1','Max Weber alinhava-se à visão de Marx em relação ao tratamento do desenvolvimento do capitalismo no mundo moderno e às investigações sobre os sistemas anteriores de produção e as lógicas de relações sociais que se estabeleciam em volta deles. 
+Entretanto, Weber discordava de Marx em alguns pontos cruciais. Quais são eles?', '31'),
+('Questão 2','Como Max Weber conceituou a ideia de “ação social”?', '31'),
+('Questão 3','(Unicentro)
+“A ação social (incluindo tolerância ou omissão) orienta-se pela ação de outros, que podem ser passadas, presentes ou esperadas como futuras (vingança por ataques anteriores, réplica a ataques presentes, medidas de defesa diante de ataques futuros). Os ´outros` podem ser individualizados e conhecidos ou uma pluralidade de indivíduos indeterminados e completamente desconhecidos”
+(Max Weber. Ação social e relação social. In M.M. Foracchi e J.S Martins. Sociologia e Sociedade. Rio de Janeiro, LTC, 1977, p.139).
+Max Weber, um dos clássicos da sociologia, autor dessa definição de ação social, que para ele constitui o objeto de estudo da sociologia, apontou a existência de quatro tipos de ação social. Quais são elas?
+', '31'),
+('Questão 4','(Unicentro) Max Weber, um dos fundadores da Sociologia, tinha amplo conhecimento em muitas áreas afins a essa ciência, tais como economia, direito e filosofia. Assim, ao analisar o desenvolvimento do capitalismo moderno, buscou entender a natureza e as causas da mudança social. 
+Em sua obra, existem dois conceitos fundamentais, ou seja,', '31'),
+('Questão 1','As normas morais variam a depender da cultura e do período histórico. Também podem ser questionadas e destituídas. Isso significa que:', '32'),
+('Questão 2','Como podemos diferenciar moral e ética?', '32'),
+('Questão 3','Leia o fragmento abaixo:
+“Os homens não são maus, mas submissos aos seus interesses... Portanto, não é da maldade dos homens que é preciso se queixar, mas da ignorância dos legisladores que sempre colocam o interesse particular em oposição ao geral. […] Até hoje, as mais belas máximas morais não conseguem traduzir nenhuma mudança nos costumes das nações. Qual é a causa? É que os vícios de um povo estão, se ouso falar, escondidos no fundo de sua legislação.” Helvetius
+Quais são as ideias principais contidas no fragmento acima?
+', '32'),
+('Questão 4','Leia os dois fragmentos abaixo:
+“... Por outras palavras, não há determinismo, o homem é livre, o homem é liberdade. […] Não encontramos diante de nós valores ou imposições que nos legitimem o comportamento. Assim, não temos nem atrás de nós nem diante de nós, no domínio luminoso dos valores, justificações ou desculpas. Estamos sós e sem desculpas. É o que traduzirei dizendo que o homem está condenado a ser livre. Condenado porque não criou a si próprio; e, no entanto, livre porque, uma vez lançado ao mundo, é responsável por tudo o que fizer.” Jean-Paul Sartre
+“Os homens fazem sua própria história, mas não a fazem como querem; não a fazem como circunstâncias de sua escolha e sim sob aquelas com que se defrontam diretamente, legadas e transmitidas pelo passado”. Karl Marx
+', '32'),
+
+('Questão 1','A cidadania é um conceito que possui diversos significados, em geral, relacionados com a participação sujeito-cidadão dentro da sociedade e a relação com seus direitos e deveres.
+Assinale a alternativa que melhor expressa a ideia de cidadania:
+', '33'),
+('Questão 2','O que convencionou-se chamar de cidadania consiste no resultado de três aspectos fundamentais: a cidadania política (garantia de direitos e participação política), a cidadania civil (direitos relativos às liberdades individuais) e a:', '33'),
+('Questão 3','Em relação especificamente aos direitos civis assinale a alternativa correta:', '33'),
+('Questão 4','A cidadania não possui seus limites previamente definidos, ela está em constante construção e ampliação. Ao longo da história o entendimento sobre os direitos sofreu grandes transformações.
+Para o debate e a ampliação de direitos foi de suma importância:
+', '33'),
+('Questão 1','nsidere o texto a seguir:
+“Se pudéssemos nos despir de todo orgulho, se, para definir nossa espécie, nos ativéssemos estritamente ao que a história e a pré-história nos apresentam como a característica constante do homem e da inteligência, talvez não disséssemos Homo sapiens, mas Homo faber. Em conclusão, a inteligência, encarada no que parece ser o seu empenho original, é a faculdade de fabricar objetos artificiais, sobretudo ferramentas para fazer ferramentas e de diversificar ao infinito a fabricação delas.”
+BERGSON, Henri. A evolução criadora. In: Cartas, conferências e outros escritos. São Paulo: Abril Cultural, 1979. p. 178-9.
+Com base no excerto acima, é possível concluir que a inteligência é retratada como:
+', '34'),
+('Questão 2','Considere o texto a seguir:
+“Podem-se distinguir os homens dos animais pela consciência, pela religião e por tudo o que se queira. Mas eles próprios começam a se distinguir dos animais logo que começam a produzir seus meios de existência, e esse passo à frente é a própria consequência de sua organização corporal. Ao produzirem seus meios de existência, os homens produzem indiretamente sua própria vida material.”
+MARX, K., ENGELS, F. A ideologia alemã. In: CASTRO, C. Textos básicos de Sociologia. Rio de Janeiro: Zahar, 2014. p.12-3
+Podemos inferir que para, Marx e Engels, o trabalho é
+', '34'),
+('Questão 3','Considere o texto a seguir:
+“Relação de trabalho é o gênero que compreende o trabalho autônomo, eventual, avulso etc. Relação de emprego trata do trabalho subordinado do empregado em relação ao empregador. A CLT disciplina a relação de empregados. A Justiça do Trabalho, de modo geral, julga questões de empregados.”
+MARTINS, Sérgio Pinto. Direito do Trabalho. 20. ed. São Paulo: Atlas, 2004. p. 114.
+Observando a importância da Consolidação das Leis Trabalhistas, que unificou a legislação trabalhista existente no Brasil em 1943, a CLT tem como intento a(o):
+', '34'),
+('Questão 4','Considere o texto a seguir:
+“Educar em uma sociedade da informação significa muito mais que treinar pessoas para o uso das tecnologias de informação e comunicação: trata-se de investir na criação de competências suficientemente amplas que lhes permitam ter uma atuação afetiva na produção de bens e serviços, tomar decisões fundamentadas no conhecimento, operar com fluência os novos meios e ferramentas em seu trabalho, bem como aplicar criativamente as novas mídias, seja em usos simples e rotineiros, seja em aplicações mais sofisticadas. Trata-se também de formar os indivíduos para ‘aprender a aprender’, de modo a serem capazes de lidar positivamente com a contínua e acelerada transformação da base tecnológica.”
+BRASIL, MINISTÉRIO DA CIÊNCIA E TECNOLOGIA. Sociedade da informação no Brasil: Livro Verde. Brasília: Ministério da Ciência e Tecnologia, 2000. p. 45.
+No texto, há uma forte valorização:
+', '34'),
+('Questão 1','Na sociedade democrática, indivíduos e grupos organizam-se em associações, movimentos sociais e populares, classes se organizam em sindicatos e partidos, criando um contra-poder social que, direta ou indiretamente, limita o poder do Estado.
+Marilena Chauí, Convite à Filosofia
+Nesse sentido, a importância dos movimentos sociais para as reivindicações de grupos minoritários se dá porque:
+', '35'),
+('Questão 2','Qual das organizações abaixo não se configura como um movimento social?', '35'),
+('Questão 3','O movimento “Diretas Já” foi uma mobilização popular iniciada em 1983. O movimento reivindicava a:', '35'),
+('Questão 4','O Movimento dos Trabalhadores Rurais Sem Terra (MST), existente desde a década de 1970, é um movimento social que possui como uma das pautas centrais a:', '35'),
+('Questão 1','O antropólogo inglês Edward Tylor (1832-1917) foi responsável por criar a primeira definição de cultura. Segundo o estudioso, ela representa:
+(...) todo complexo que inclui conhecimentos, crenças, arte, moral, leis, costumes ou qualquer outra capacidade ou hábitos adquiridos pelo homem como membro de uma sociedade.
+(TYLOR, E. Primitive culture. Londres: John Mursay & Co, 1871).
+Sobre o conceito de cultura, é correto afirmar:
+', '36'),
+('Questão 2','Sobre a cultura popular e erudita é incorreto afirmar:', '36'),
+('Questão 3','Segundo o antropólogo brasileiro Everardo Rocha:
+“______ é uma visão do mundo onde o nosso próprio grupo é tomado como centro de tudo, e todos os outros são pensados e sentidos por meio dos nossos valores, modelos e definições do que é a existência. No plano intelectual, pode ser visto como a dificuldade de pensarmos a diferença; no plano afetivo, como sentimentos de estranheza, medo, hostilidade, etc.” (ROCHA, 1988, p. 5).
+O conceito que preenche corretamente a lacuna é denominado de:
+', '36'),
+('Questão 4','“Todos nós, brasileiros, somos carne da carne daqueles pretos e índios supliciados. Todos nós brasileiros somos, por igual, a mão possessa que os supliciou. A doçura mais terna e a crueldade mais atroz aqui se conjugaram para fazer de nós a gente sentida e sofrida que somos e a gente insensível e brutal, que também somos. Descendentes de escravos e de senhores de escravos seremos sempre servos da malignidade destilada e instalada em nós, tanto pelo sentimento da dor intencionalmente produzida para doer mais, quanto pelo exercício da brutalidade sobre homens, sobre mulheres, sobre crianças convertidas em pasto de nossa fúria. A mais terrível de nossas heranças é esta de levar sempre conosco a cicatriz de torturador impressa na alma e pronta a explodir na brutalidade racista e classista.”
+(RIBEIRO, Darcy. O povo brasileiro: a formação e o sentido do Brasil. São Paulo: Companhia das Letras, 1995.)
+O trecho do texto acima aborda sobre a mistura étnica na formação da identidade brasileira. No olhar do antropólogo brasileiro Darcy Ribeiro:
+', '36'),
+
+('Questão 1','(UFSM) Sobre a literatura produzida no primeiro século da vida colonial brasileira, é correto afirmar que:', '37'),
+('Questão 2','(UFV) Leia a estrofe abaixo e faça o que se pede:
+
+Dos vícios já desligados
+nos pajés não crendo mais,
+nem suas danças rituais,
+nem seus mágicos cuidados.
+
+(ANCHIETA, José de. O auto de São Lourenço [tradução e adaptação de Walmir Ayala] Rio de Janeiro: Ediouro[s.d.]p. 110)
+Assinale a afirmativa verdadeira, considerando a estrofe acima, pronunciada pelos meninos índios em procissão:
+', '37'),
+('Questão 3','A famosa “Carta de achamento do Brasil”, mais conhecida como “A carta de Pero Vaz de Caminha”, foi o primeiro manuscrito que teve como objeto a terra recém-descoberta. 
+Nela encontramos o primeiro registro de nosso país, feito pelo escrivão do rei de Portugal, Pero Vaz de Caminha. Podemos inferir, então, a seguinte intenção dos portugueses:', '37'),
+('Questão 4','Leia o texto “Erro de português”, de Oswald de Andrade, para responder à questão.
+Erro de português
+Quando o português chegou
+Debaixo duma bruta chuva
+Vestiu o índio
+Que pena!Fosse uma manhã de sol
+O índio tinha despido
+O português.
+Oswald de Andrade
+Podemos observar que há uma crítica do autor em relação aos povos colonizadores, sobretudo uma crítica sobre as intenções dos padres jesuítas, amplamente expressas na literatura produzida durante o Quinhentismo. A crítica de Oswald de Andrade está presente no verso:
+', '37'),
+('Questão 1','(UNIV. CAXIAS DO SUL) Escolha a alternativa que completa de forma correta a frase abaixo: 
+
+A linguagem ______, o paradoxo, ________ e o registro das impressões sensoriais são recursos linguísticos presentes na poesia ________. 
+', '38'),
+('Questão 2','Com referência ao Barroco, todas as alternativas são corretas, exceto:', '38'),
+('Questão 3','A uma crueldade formosa
+A minha bela ingrata
+Cabelo de ouro tem, fronte de prata,
+De bronze o coração, de aço o peito;
+São os olhos reluzentes
+Por quem choro e suspiro,
+Desfeito em cinza, em lágrimas desfeito;
+Celestial safira,
+Os beiços são rubins, perlas os dentes;
+A lustrosa garganta
+De mármore polido;
+A mão de jaspe, de alabastro a planta.
+Que muito, pois, Cupido,
+Que tenha tal rigor tanta lindeza,
+As feições milagrosas,
+- Para igualar desdéns a formosuras -
+De preciosos metais, pedras preciosas,
+E de duros metais, de pedras duras?
+Jerônimo Baía
+Ao ler o poema, é possível inclui-lo em que tendência barroca?
+', '38'),
+('Questão 4','No Brasil, o Barroco foi introduzido com o poeta:', '38'),
+('Questão 1','(ITA)
+Uma das afirmações abaixo é incorreta. Assinale-a:
+', '39'),
+('Questão 2','Carpe Diem.
+Que havemos de esperar, Marília bela? 
+que vão passando os florescentes dias? 
+As glórias que vêm tarde já vêm frias, 
+e pode, enfim, mudar-se a nossa estrela. 
+Ah! não, minha Marília, 
+aprovei-te o tempo, antes que faça 
+o estrago de roubar ao corpo as forças, 
+e ao semblante a graça! 
+Assinale o movimento literário ao qual ele pertence, bem como o seu autor:
+', '39'),
+('Questão 3','(UFSCar)
+Texto 1
+Eu quero uma casa no campo
+do tamanho ideal
+pau-a-pique e sapê
+Onde eu possa plantar meus amigos
+meus discos
+meus livros
+e nada mais
+(Zé Rodrix e Tavito)
+Texto 2
+Se o bem desta choupana pode tanto,
+Que chega a ter mais preço, e mais valia,
+Que da cidade o lisonjeiro encanto;
+Aqui descanse a louca fantasia;
+E o que té agora se tornava em pranto,
+Se converta em afetos de alegria.
+(Cláudio Manuel da Costa)
+Embora muito distantes entre si na linha do tempo, os textos aproximam-se, pois o ideal que defendem é
+', '39'),
+('Questão 4','Sobre as características do Arcadismo, é correto afirmar, exceto:', '39'),
+('Questão 1','(Enem)
+Soneto
+Já da morte o palor me cobre o rosto,
+Nos lábios meus o alento desfalece,
+Surda agonia o coração fenece,
+E devora meu ser mortal desgosto!
+Do leito embalde no macio encosto
+Tento o sono reter!... já esmorece
+O corpo exausto que o repouso esquece...
+Eis o estado em que a mágoa me tem posto!
+O adeus, o teu adeus, minha saudade,
+Fazem que insano do viver me prive
+E tenha os olhos meus na escuridade.
+Dá-me a esperança com que o ser mantive!
+Volve ao amante os olhos por piedade,
+Olhos por quem viveu quem já não vive!
+AZEVEDO, A. Obra completa. Rio de Janeiro: Nova Aguilar, 2000.
+', '40'),
+('Questão 2','(Enem)
+No trecho abaixo, o narrador, ao descrever a personagem, critica sutilmente um outro estilo de época: o Romantismo.
+“Naquele tempo contava apenas uns quinze ou dezesseis anos; era talvez a mais atrevida criatura da nossa raça, e, com certeza, a mais voluntariosa. Não digo que já lhe coubesse a primazia da beleza, entre as mocinhas do tempo, porque isto não é romance, em que o autor sobredoura a realidade e fecha os olhos às sardas e espinhas; mas também não digo que lhe maculasse o rosto nenhuma sarda ou espinha, não. Era bonita, fresca, saía das mãos da natureza, cheia daquele feitiço, precário e eterno, que o indivíduo passa a outro indivíduo, para os fins secretos da criação.”
+ASSIS, Machado de. Memórias Póstumas de Brás Cubas. Rio de Janeiro: Jackson,1957.
+A frase do texto em que se percebe a crítica do narrador ao romantismo está transcrita na alternativa:
+', '40'),
+('Questão 3','(Mackenzie)
+A natureza, nessa estrofe:
+“Do tamarindo a flor abriu-se, há pouco,
+Já solta o bogari mais doce aroma!
+Como prece de amor, como estas preces,
+No silêncio da noite o bosque exala.”
+Gonçalves Dias
+Obs.:
+tamarindo = árvore frutífera; o fruto dessa mesma planta
+bogari = arbusto de flores brancas
+', '40'),
+('Questão 4','(Enem)
+TEXTO A
+Canção do exílio
+Minha terra tem palmeiras,
+Onde canta o Sabiá,
+As aves, que aqui gorjeiam,
+Não gorjeiam como lá.
+Nosso céu tem mais estrelas,
+Nossas várzeas tem mais flores,
+Nossos bosques tem mais vida,
+Nossa vida mais amores.
+[...]
+Minha terra tem primores,
+Que tais não encontro eu cá;
+Em cismar - sozinho, à noite -
+Mais prazer eu encontro lá;
+Minha terra tem palmeiras
+Onde canta o Sabiá.
+Não permita Deus que eu morra,
+Sem que eu volte para lá;
+Sem que desfrute os primores
+Que não encontro por cá;
+Sem quinda aviste as palmeiras
+Onde canta o Sabiá.
+DIAS, G. Poesia e prosa completas. Rio de Janeiro: Aguilar, 1998.
+TEXTO B
+Canto de regresso à Pátria
+Minha terra tem palmares
+Onde gorjeia o mar
+Os passarinhos daqui
+Não cantam como os de lá
+Minha terra tem mais rosas
+E quase tem mais amores
+Minha terra tem mais ouro
+Minha terra tem mais terra
+Ouro terra amor e rosas
+Eu quero tudo de lá
+Não permita Deus que eu morra
+Sem que volte para lá
+Não permita Deus que eu morra
+Sem que volte pra São Paulo
+Sem que eu veja a Rua 15
+E o progresso de São Paulo
+ANDRADE, O. Cadernos de poesia do aluno Oswald. São Paulo: Círculo do Livro. s/d.
+Os textos A e B, escritos em contextos históricos e culturais diversos, enfocam o mesmo motivo poético: a paisagem brasileira entrevista a distância. Analisando-os, conclui-se que:
+', '40'),
+
+('Questão 1','Mark the alternative that complete correctly the sentences:
+“How________ potatoes do you need?”
+“Do you need________ milk?
+“How ________ cartoons of orange juice do you want?”
+', '41'),
+('Questão 2','Mark the alternative that complete correctly the sentences:
+There are ________ dogs and cats for adoption if you want one.
+I have _______ books.
+Do you want _______ water?
+I have so _________ love to give.
+', '41'),
+('Questão 3','Mark the incorrect option.', '41'),
+('Questão 4','(UFPR) Which of the underlined expression is used correctly?', '41'),
+('Questão 1',' (IFGO/2015)
+Ebola crisis
+West Africa is experiencing the biggest outbreak of the Ebola virus ever known, causing thousands of deaths, devastating fragile healthcare systems and damaging the economies of countries, some of which are still recovering from civil war. Infections are thought to be doubling every few weeks. The World Health Organization (WHO) says there were 13,700 officially registered cases by the end of October, almost all in Sierra Leone, Liberia and Guinea, with about 5,000 deaths, but many go unrecorded and the true figure is thought to be two to three times higher. The US Centre for Disease Control (CDC) says that if nothing changes there could be 1.4 million cases by late January.
+The WHO has been criticized for not reacting fast enough to the outbreak: it took three months to diagnose the first cases, and five months more before a public health emergency was declared. The exceptional spread of the disease was probably down to a number of factors including dysfunctional health systems, high population mobility across state borders, densely populated capitals and lack of trust in authorities after years of armed conflict meaning health advice is not heeded. Fear is also a factor. People are afraid to go to hospital because they think it may be the source of infection.
+Healthcare in the region was fragile before Ebola. Now there is disintegration as staff become ill or stay away for fear of the disease. Infection control and hygiene are major issues. Soap and water are unavailable in some areas. Alcohol hand rubs are needed on a large scale. Isolation facilities are vital to contain Ebola, as are labs for testing because rapid diagnosis is very important. Both are in very short supply. In some places, isolation is nothing more than an area behind a curtain. People with other diseases and women in childbirth are at risk because hospitals are no longer functioning properly.
+The Guardian, Oct. 31, 2014. Available on: . Access on: Nov. 25, 2014. [Adapted]
+About the first sentence of the text, it is correct to affirm that:
+', '42'),
+('Questão 2','(FPS-PE/2014)
+Depression in pregnancy may affect children’s mental health, study finds
+Research suggests that levels of stress hormone cortisol, which are raised in depression, can influence development of foetus
+By Sarah Boseley, health editor
+Experts called for more help for women who are depressed in pregnancy, saying the study confirmed that the development of people’s mental health begins before birth. Photograph: Katie Collins/PA
+The children of women who are depressed during their pregnancy may be more likely to succumb to depression themselves by the age of 18, according to new research.
+A large study from Bristol University, published in a leading medical journal, suggests that levels of the stress hormone cortisol, which are raised in depression, may affect the development of the foetus in the womb.
+Experts called for more help for women who are depressed in pregnancy, saying the study confirmed that the development of people’s mental health begins before birth. “The message is clear: helping women who are depressed in pregnancy will not only alleviate their suffering but also the suffering of the next generation,” said Carmine Pariante, professor of biological psychiatry at King’s College London’s Institute of Psychiatry. The study also showed that postnatal depression in the mother was a risk factor for children’s depression in late adolescence, but only in mothers with low educational attainment.
+The study is published in JAMA (Journal of the American Medical Association) Psychiatry. It was carried out by Rebecca Pearson, research epidemiologist at Bristol University’s school of social community medicine, and colleagues, who studied data on the mental health of more than 4,500 parents and their adolescent children involved in Alspac (Avon longitudinal study of parents and children). “The findings have important implications for the nature and timing of interventions aimed at preventing depression in the offspring of depressed mothers. In particular, the findings suggest that treating depression in pregnancy, irrespective of background, may be most effective,” the authors wrote.
+Celso Arango, professor of psychiatry at the Gregorio Marañón general university hospital, Madrid, and president-elect of the European College of Neuropsychopharmacology (ECNP), said it was a significant study. He pointed out that the mental state of the father during the pregnancy had no effect on the long-term health of the child, which may implicate cortisol in the womb. “Researchers are only just beginning to realise that it is not psychiatrists, psychologists or neuroscientists that are having the biggest impact on preventing mental health issues – it is gynaecologists,” he said. “This is something that needs much more research as we have seen similar impacts in schizophrenia with increased risk in mothers that developed schizophrenia during the war and passed on an increased risk to their children.”
+Source: http://www.the guardian.co.uk
+In the sentence “The findings have important implications for the nature and timing of interventions aimed at preventing depression in the offspring of depressed mothers.” there are some words which end in –ing. Mark the answer that explains the proper use of –ing ending.
+If a verb comes after a determiner such as THE, the verb ends in –ing as in the findings.
+', '42'),
+('Questão 3','(EFOMM/2007)
+The companies are expanding their business and they __________ all the help they can get. So they __________ several people.
+', '42'),
+('Questão 4',' (Unesp/2000) Assinale a alternativa que preenche corretamente cada lacuna da frase apresentada:
+I __________ to the radio every day, but I __________ listening to it now.
+', '42'),
+('Questão 1','(Mackenzie-2000) Assinale a alternativa que corretamente preenche as lacunas I, II e III das frases a seguir:
+He __________(I) me a favor 2 months ago.
+They __________(II) an attempt to escape.
+I __________(III) an important decision last night.
+', '43'),
+('Questão 2','(UECE/2018)
+TEXT II
+Have Smartphones Destroyed a Generation?
+Jean M. Twenge
+ 
+Compiled from: https://www.theatlantic.com/magazine/archive/2017/09/ha s-the-smartphone-destroyed-a-generation/534198/and https://blog.12min.com/have-smartphones-destroyed-ageneration-summary/
+When the ____________ 1, ___________ 2.
+', '43'),
+('Questão 3','(Marinha/2017) - Which option correctly completes the text below?
+The Rosetta Stone
+"Egyptian hieroglyphic ________________ undeciphered until the 19th century. Members of Napoleon’s Egyptian expedition of 1799________________a black basalt stone, ______________ 114 x 72 cm, at Rashid (Rosetta). The stone ___________ with three different scripts: hieroglyphic, the derived demotic script,_________________ everyday purposes, and Greek. (...)”
+(CRYSTAL, David. The Cambridge Encyclopedia of Language, 3rd edition, Cambridge University Press, 2010.)
+', '43'),
+('Questão 4','(IF- SE/2018)
+Brazil Protests Execution of Rights Activist Marielle Franco
+While the World Social Forum is taking place in Brazil this week, thousands of Brazilians marched to protest the execution of Marielle Franco, a prominent social leader, human rights activist and councilwoman.
+Franco was shot and killed in Rio de Janeiro Wednesday night by unknown gunmen along with her driver Anderson Pedro Gomes, while her advisor was injured.
+Being a young Black Brazilian who grew up in a favela, Franco became one of Brazils prominent defenders of human rights, focusing on the impoverished favelas that are often the target of gang and militias violence.
+The day before she was murdered, Marielle complained about the violence in the city in a post on her personal Twitter account. In the post, she questioned the action of the Military Police. "One more homicide of a young man who may be coming in for the Ps account... How many more will have to die for this war to end?"
+Os verbos destacados abaixo estão conjugados no passado simples. Observe as alternativas e assinale a opção em que a sequência dos verbos corresponda à sua forma normal.
+Marched-grew-became
+', '43'),
+
+('Questão 1','(UNIP) Things ___________ a lot since October.', '44'),
+('Questão 2','(ITA) A: Would you like some more whisky?
+B: Yes, you ___________ it.
+', '44')
+
+insert into obras (nome_obra, autor_obra, img_obra, route_obra)
+values
+('A Hora da Estrela', 'Clarice Lispector', 'img/obras.png', '/app/public/A Hora da Estrela - Clarice Lispector.pdf'),
+('A moreninha', 'Joaquim Manuel de Macedo', 'img/obras.png', '/app/public/A_moreninha.pdf'),
+('Alguma Poesia', 'Carlos Drummond De Andrade', 'img/obras.png', '/app/public/Alguma Poesia.pdf'),
+('Alice no País das maravilhas', 'Lewis Carrol', 'img/obras.png', '/app/public/Alice-no-País-das-maravilhas.pdf'),
+('Capitães da Areia', 'Jorge Amado ', 'img/obras.png', '/app/public/capitaes-da-areia.pdf'),
+('Dom Casmurro', 'Machado de Assis', 'img/obras.png', '/app/public/Dom_Casmurro-Machado_de_Assis.pdf'),
+('Grande Sertão', 'João Guimarães Rosa', 'img/obras.png', '/app/public/Grande Sertão.pdf'),
+('Iracema', 'José de Alencar', 'img/obras.png', '/app/public/Iracema.pdf'),
+('Laços de Familia', 'Clarice Linspector', 'img/obras.png', '/app/public/Laços de Família.pdf'),
+('Memórias Postumas de Brás Cubas', 'Machado de Assis', 'img/obras.png', '/app/public/Memórias Postumas de Brás Cubas - PDF.pdf'),
+('O cortiço', 'Aluisio Azevedo', 'img/obras.png', '/app/public/O cortiço.pdf'),
+('Estrela da Vida Inteira', 'Manoel Bandeira', 'img/obras.png', '/app/public/pdfcoffee.com_manoel-bandeira-estrela-da-vida-inteira-pdf-free.pdf'),
+('Sagarana', 'João Guimarães Rosa', 'img/obras.png', '/app/public/Sagarana.pdf'),
+('Vidas Secas', 'Graciliano Ramos', 'img/obras.png', '/app/public/vidas-secas-graciliano-ramos.pdf')
+
+select *from obras
+
+insert into vestibulares
+(facu_vest, ano_vest, img_vest,faseum_vest, fasedois_vest, fase3_vest, fase4_vest, fase5_vest, fase6_vest, fase7_vest, fase8_vest)
+values
+('enem', '2017', 'img/vest/enem.png', '/app/public/vestibulares/enem/2017/1dia/1dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2017/1dia/1dia-caderno-azul.pdf','/app/public/vestibulares/enem/2017/1dia/1dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2017/1dia/1dia-caderno-rosa.pdf', '/app/public/vestibulares/enem/2017/2dia/2dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2017/2dia/2dia-caderno-azul.pdf','/app/public/vestibulares/enem/2017/2dia/2dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2017/2dia/2dia-caderno-rosa.pdf'),
+('enem', '2018', 'img/vest/enem.png', '/app/public/vestibulares/enem/2018/1dia/1dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2018/1dia/1dia-caderno-azul.pdf','/app/public/vestibulares/enem/2018/1dia/1dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2018/1dia/1dia-caderno-rosa.pdf', '/app/public/vestibulares/enem/2018/2dia/2dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2018/2dia/2dia-caderno-azul.pdf','/app/public/vestibulares/enem/2018/2dia/2dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2018/2dia/2dia-caderno-rosa.pdf'),
+('enem', '2019', 'img/vest/enem.png', '/app/public/vestibulares/enem/2019/1dia/1dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2019/1dia/1dia-caderno-azul.pdf','/app/public/vestibulares/enem/2019/1dia/1dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2019/1dia/1dia-caderno-rosa.pdf', '/app/public/vestibulares/enem/2019/2dia/2dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2019/2dia/2dia-caderno-azul.pdf','/app/public/vestibulares/enem/2019/2dia/2dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2019/2dia/2dia-caderno-rosa.pdf'),
+('enem', '2020', 'img/vest/enem.png', '/app/public/vestibulares/enem/2020/1dia/1dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2020/1dia/1dia-caderno-azul.pdf','/app/public/vestibulares/enem/2020/1dia/1dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2020/1dia/1dia-caderno-rosa.pdf', '/app/public/vestibulares/enem/2020/2dia/2dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2020/2dia/2dia-caderno-azul.pdf','/app/public/vestibulares/enem/2020/2dia/2dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2020/2dia/2dia-caderno-rosa.pdf'),
+('enem', '2021', 'img/vest/enem.png', '/app/public/vestibulares/enem/2021/1dia/1dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2021/1dia/1dia-caderno-azul.pdf','/app/public/vestibulares/enem/2021/1dia/1dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2021/1dia/1dia-caderno-rosa.pdf', '/app/public/vestibulares/enem/2021/2dia/2dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2021/2dia/2dia-caderno-azul.pdf','/app/public/vestibulares/enem/2021/2dia/2dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2021/2dia/2dia-caderno-rosa.pdf'),
+('enem', '2022', 'img/vest/enem.png', '/app/public/vestibulares/enem/2022/1dia/1dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2022/1dia/1dia-caderno-azul.pdf','/app/public/vestibulares/enem/2022/1dia/1dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2022/1dia/1dia-caderno-rosa.pdf','/app/public/vestibulares/enem/2022/2dia/2dia-caderno-amarelo.pdf', '/app/public/vestibulares/enem/2022/2dia/2dia-caderno-azul.pdf','/app/public/vestibulares/enem/2022/2dia/2dia-caderno-branco.pdf', '/app/public/vestibulares/enem/2022/2dia/2dia-caderno-rosa.pdf')
+
+
+insert into vestibulares
+(facu_vest, ano_vest, img_vest,faseum_vest, fasedois_vest)
+values
+('unesp', '2017', 'img/vest/unesp.png','/app/public/vestibulares/unesp/2017/1fase/1fase-2017.pdf','/app/public/vestibulares/unesp/2017/2fase/2fase-2017.pdf'),
+('unesp', '2018', 'img/vest/unesp.png','/app/public/vestibulares/unesp/2018/1fase/1fase-2018.pdf','/app/public/vestibulares/unesp/2018/2fase/2fase-2018.pdf'),
+('unesp', '2019', 'img/vest/unesp.png','/app/public/vestibulares/unesp/2019/1fase/1fase-2019.pdf','/app/public/vestibulares/unesp/2019/2fase/2fase-2019.pdf'),
+('unesp', '2021', 'img/vest/unesp.png','/app/public/vestibulares/unesp/2021/1fase/1fase-2021.pdf','/app/public/vestibulares/unesp/2021/2fase/2fase-2021.pdf'),
+('unicamp','2017', 'img/vest/unicamp.png','/app/public/vestibulares/unicamp/2017/1fase/1fase.pdf','/app/public/vestibulares/unicamp/2017/2fase/2fase.pdf'),
+('unicamp', '2018', 'img/vest/unicamp.png','/app/public/vestibulares/unicamp/2018/1fase/1fase.pdf','/app/public/vestibulares/unicamp/2018/2fase/2fase.pdf'),
+('unicamp', '2019', 'img/vest/unicamp.png','/app/public/vestibulares/unicamp/2019/1fase/1fase.pdf','/app/public/vestibulares/unicamp/2019/2fase/2fase.pdf'),
+('unicamp', '2020', 'img/vest/unicamp.png','/app/public/vestibulares/unicamp/2020/1fase/1fase.pdf','/app/public/vestibulares/unicamp/2020/2fase/2fase.pdf'),
+('unicamp', '2021', 'img/vest/unicamp.png','/app/public/vestibulares/unicamp/2021/1fase/1fase.pdf','/app/public/vestibulares/unicamp/2021/2fase/2fase.pdf')
+
+insert into vestibulares
+(facu_vest, ano_vest, img_vest,faseum_vest, fasedois_vest, fase3_vest, fase4_vest, dia_vest)
+values
+('fuvest', '2017', 'img/vest/fuvest.png','/app/public/vestibulares/fuvest/2017/1fase/1fase.pdf','/app/public/vestibulares/fuvest/2017/2fase/2fase-1dia.pdf','/app/public/vestibulares/fuvest/2017/2fase/2fase-2dia.pdf','/app/public/vestibulares/fuvest/2017/2fase/2fase-3dia.pdf','Terceiro dia'),
+('fuvest', '2018', 'img/vest/fuvest.png','/app/public/vestibulares/fuvest/2018/1fase/1fase.pdf','/app/public/vestibulares/fuvest/2018/2fase/2fase-1dia.pdf','/app/public/vestibulares/fuvest/2018/2fase/2fase-2dia.pdf','/app/public/vestibulares/fuvest/2018/2fase/2fase-3dia.pdf','Terceiro dia')
+
+insert into vestibulares
+(facu_vest, ano_vest, img_vest,faseum_vest, fasedois_vest, fase3_vest)
+values
+('fuvest', '2019', 'img/vest/fuvest.png','/app/public/vestibulares/fuvest/2019/1fase/1fase.pdf','/app/public/vestibulares/fuvest/2019/2fase/2fase-1dia.pdf','/app/public/vestibulares/fuvest/2019/2fase/2fase-2dia.pdf'),
+('fuvest', '2020', 'img/vest/fuvest.png','/app/public/vestibulares/fuvest/2020/1fase/1fase.pdf','/app/public/vestibulares/fuvest/2020/2fase/2fase-1dia.pdf','/app/public/vestibulares/fuvest/2020/2fase/2fase-2dia.pdf'),
+('fuvest', '2021', 'img/vest/fuvest.png','/app/public/vestibulares/fuvest/2021/1fase/1fase.pdf','/app/public/vestibulares/fuvest/2021/2fase/2fase-1dia.pdf','/app/public/vestibulares/fuvest/2021/2fase/2fase-2dia.pdf')
+
+
+insert into alternativas
+(texto_alt, resp_alt, quest_id)
+values
+('Revolução Federalista', '0' , '80'),
+('Revolta da Armada', '0' , '80'),
+('Revolução Praieira', '1' , '80'),
+('Revolta da Chibata', '0' , '80'),
+('Política do café com leite', '0' , '81'),
+('Política dos governadores', '1' , '81'),
+('Política das minorias', '0' , '81'),
+('Política de contenção', '0' , '81'),
+('a derrota do movimento tenentista em São Paulo', '0' , '82'),
+('a derrota de Getúlio Vargas', '0' , '82'),
+('o assassinato de João Pessoa', '1' , '82'),
+('o retorno da Coluna Prestes', '0' , '82'),
+('Revolta da Chibata', '1' , '83'),
+('Guerra do Contestado', '0' , '83'),
+('Guerra de Canudos', '0' , '83'),
+('Revolta Paulista de 1924', '0' , '83'),
+('Frente Ampla', '0' , '84'),
+('Ibad', '0' , '84'),
+('Ipes', '0' , '84'),
+('Rede da Democracia', '1' , '84'),
+('Carlos Marighella', '0' , '85'),
+('Carlos Lacerda', '1' , '85'),
+('Carlos Lamarca', '0' , '85'),
+('João Amazonas', '0' , '85'),
+('PT e PSDB', '0' , '86'),
+('PTB e UDN', '0' , '86'),
+('PRP e PRM.', '0' , '86'),
+('Arena e MDB.', '1' , '86'),
+('modificação de limites territoriais.', '0' , '87'),
+('sobrevivência de oficiais exilados', '0' , '87'),
+('interferência de potências mundiais.', '0' , '87'),
+('repressão de ativistas oposicionistas.', '1' , '87'),
+('As potências europeias justificavam a invasão nos países periféricos afirmando que essa ação contribuiria para o desenvolvimento industrial e que incentivaria a adoção de um regime socialista nos países asiáticos.', '0', '88'),
+('As principais alegações utilizadas na prática do Imperialismo foram as teorias darwinistas que defendiam a superioridade cultural dos países europeus, sendo eles os países que levariam o progresso e o desenvolvimento social para os países da África e da Ásia através da missão civilizadora.', '0', '88'),
+('Uma das justificativas era que os europeus aprenderiam técnicas industriais com os africanos e asiáticos, o que acarretaria no desenvolvimento econômico e científico dos países desenvolvidos. ', '0', '88'),
+('O fardo do homem branco era uma das legitimações europeias durante a política imperialista. Esse fardo consistia numa missão que contribuiria para o desenvolvimento industrial dos países africanos e asiáticos, gerando assim o crescimento da burguesia local, fazendo com que os países não desenvolvidos tivessem suas próprias indústrias.', '1', '88'),
+('O imperialismo e o neocolonialismo ajudaram os povos africanos e asiáticos a saírem de seu atraso secular, possibilitando-lhes o acesso ao progresso.', '0', '89'),
+('A segunda Revolução Industrial, o capitalismo monopolista e os ideais de progresso estão associados ao imperialismo, ao neocolonialismo e ao completo domínio dos Estados Unidos, no final do século XIX.', '0', '89'),
+('A maior beneficiária de todo o domínio imperialista e do neocolonialismo na Ásia e África foi a classe operária, em face do pleno emprego da indústria', '0', '89'),
+('Através do imperialismo e do neocolonialismo, as elites econômicas e políticas inglesas construíram a imagem de que eram o modelo de cultura e civilização a ser imitado em todo o mundo', '1', '89'),
+('Alemanha', '0', '90'),
+('Rússia', '0', '90'),
+('Império Otomano', '1', '90'),
+('França', '0', '90'),
+('Alemanha ficou proibida de ter marinha de guerra.', '0', '91'),
+('Alemanha ficou proibida de ter aviação de guerra.', '0', '91'),
+('A Alemanha manteve suas instalações militares na Renânia em troca de devolver a Alsácia-Lorena.', '1', '91'),
+('A Alemanha ficou limitada ao máximo de 100 mil soldados.', '0', '91'),
+('Hostilidade da Alemanha contra os Estados Unidos.', '1', '92'),
+('O ataque a cidadãos norte-americanos que estavam na Áustria-Hungria', '0', '92'),
+('O aprisionamento de uma delegação norte-americana na França.', '0', '92'),
+('Atentados terroristas realizados nos Estados Unidos a mando das Potências Centrais.', '0', '92'),
+('Guerra-relâmpago', '0', '93'),
+('Corrida nuclear', '0', '93'),
+('Guerra de Trincheiras', '1', '93'),
+('Derrota do Eixo', '0', '93'),
+('a superioridade intelectual de Israel e a necessidade de auxílio bélico da Palestina.', '0', '94'),
+('o direito de autodefesa de Israel e a legitimidade palestina de luta pelo território.', '1', '94'),
+('a necessidade de autoproclamação dos judeus e a grandeza moral da Palestina.', '0', '94'),
+('o caráter religioso de Israel e a posição anticlerical da Palestina.', '0', '94'),
+('inversão diaspórica', '0', '95'),
+('judaísmo', '0', '95'),
+('sionismo', '1', '95'),
+('territorialização', '0', '95'),
+('parte do território judeu, mas de livre acesso pelos árabes.', '0', '96'),
+('a capital da Palestina, porém com participação gestora de Israel.', '0', '96'),
+('uma cidade administrada igualmente pelos dois países.', '0', '96'),
+('uma cidade neutra, de cunho internacional, administrada pela ONU.', '1', '96'),
+('exigência, pelos países do Oriente Médio, de cumprimento do Plano da ONU de Partição da Palestina, que criava o Estado Palestino no final da Segunda Guerra Mundial.', '0', '97'),
+('incapacidade dos países vencedores da Segunda Guerra de garantir a paz no Ocidente nos anos posteriores ao conflito, provocando uma fuga em massa de judeus para a Palestina.', '0', '97'),
+('construção de um padrão de instabilidade nas relações internacionais pelo recém-criado Estado de Israel, que contava com o apoio dos Estados Unidos, da União Soviética e da ONU.', '0', '97'),
+('recusa árabe à partilha da Palestina, imposta pela ONU, que submeteu a maior parte do território ao controle do recém-criado Estado de Israel, sem que se respeitasse a soberania dos povos desta região.', '1', '97'),
+('Argentina', '0', '98'),
+('Brasil', '0', '98'),
+('Equador', '1', '98'),
+('Paraguai', '0', '98'),
+('México.', '0', '99'),
+('Panamá.', '0', '99'),
+('Austrália.', '0', '99'),
+('Bolívia.', '1', '99'),
+('parceira militar entre as principais nações latinas.', '0', '100'),
+('união monetária nos padrões dos países europeus.', '0', '100'),
+('adoção de uma moeda única entre os participantes.', '0', '100'),
+('zona de livre de comércio de mercadorias e serviços.', '1', '100'),
+('Argentina', '0', '101'),
+('Brasil', '1', '101'),
+('Chile', '0', '101'),
+('Uruguai', '0', '101'),
+('Dinamarca, Noruega e Finlândia.', '0', '102'),
+('Bélgica, Países Baixos e Luxemburgo.', '1', '102'),
+('Grã-Bretanha, Noruega e Escócia.', '0', '102'),
+('França, Bélgica e República Tcheca.', '0', '102'),
+('Comunidade Econômica Europeia.', '0', '103'),
+('Comunidade dos Estados Independentes.', '0', '103'),
+('Comunidade Europeia do Carvão e do Aço.', '1', '103'),
+('Mercado Comum Europeu.', '0', '103'),
+('Croácia.', '1', '104'),
+('Sérvia.', '0', '104'),
+('Turquia.', '0', '104'),
+('Malta.', '0', '104'),
+('Ucrânia, Sérvia e Macedônia.', '0', '105'),
+('Polônia, Macedônia e Moldávia.', '0', '105'),
+('Áustria, Hungria e Eslováquia.', '0', '105'),
+('Estônia, Letônia e Lituânia.', '1', '105'),
+('protecionismo econômico praticado pelos países desenvolvidos.', '0', '106'),
+('desenvolvimento dos meios de transporte e de comunicação.', '1', '106'),
+('emprego de técnicas tradicionais de produção, como o fordismo.', '', '106'),
+('comprometimento com o desenvolvimento sustentável das nações.', '0', '106'),
+('produção de conhecimento, como as de informática', '1', '107'),
+('exploração de bens primários, como as madeireiras.', '0', '107'),
+('atividade de produção artesanal, como as têxteis.', '0', '107'),
+('alta exploração dos trabalhadores, como as de base.', '0', '107'),
+('melhoria da qualidade de vida das populações periféricas.', '0', '108'),
+('utilização de mão de obra com baixa qualificação profissional.', '0', '108'),
+('acentuação da desigualdade social entre diferentes regiões.', '1', '108'),
+('diminuição dos impactos ambientais gerados no globo.', '0', '108'),
+('fragmentação da produção industrial.', '1', '109'),
+('utilização de mão de obra braçal.', '0', '109'),
+('existência de grandes estoques de produtos.', '0', '109'),
+('concentração das unidades fabris.', '0', '109'),
+('aumentam da insegurança e o caos social.', '0', '110'),
+('tornam visíveis suas reivindicações e aumentam sua representatividade.', '1', '110'),
+('geram de empregos e das movimentações de capital financeiro.', '0', '110'),
+('enfraquecem das instituições do governo através de críticas e manifestações.', '0', '110'),
+('Greves trabalhistas', '0', '111'),
+('Coletivos feministas', '0', '111'),
+('Movimentos estudantis', '0', '111'),
+('Câmaras municipais.', '1', '111'),
+('anistia aos presos políticos do regime militar', '0', '112'),
+('retomada das eleições diretas para a presidência da república', '1', '112'),
+('reeleição direta sem necessidade de pleito eleitoral', '0', '112'),
+('implementação de um regime comunista no Brasil', '0', '112'),
+('reforma agrária e redistribuição de terras improdutivas', '1', '113'),
+('extinção da propriedade privada', '0', '113'),
+('reorganização e desenvolvimento sustentável dos centros urbanos', '0', '113'),
+('redistribuição dos lucros do setor agrário', '0', '113'),
+('a)    O valor de exposição da obra de arte reforça os laços sociais, na medida em que a exposição intensifica a coesão social, possibilitando, democraticamente, o acesso à obra.', '0', '114'),
+('b)	A mudança do valor de culto para o valor da exposição da obra de arte revela transformações nas quais esta passa a ser concebida a partir da esfera pública.', '2', '114'),
+('c)	O valor de culto da obra de arte expressa a gradativa desvinculação entre o humano e o sagrado, considerando que a obra substitui a relação direta do humano com o sagrado.', '0', '114'),
+('d)	O valor material atribuído a uma obra de arte é constituído pela persistência de um valor de culto na exposição, evidenciado na “aura” que paira sobre as grandes obras, as chamadas obras clássicas', '0', '114'),
+('a)	apresentar conteúdos ideológicos de caráter conservador da ordem burguesa.', '0', '115'),
+('b)	comprometer-se com as necessidades de entretenimento dos consumidores culturais.', '0', '115'),
+('c)	estabelecer uma relação de independência frente à conjuntura política imediata.', '1', '115'),
+('d)	subordinar-se aos imperativos políticos e materiais de transformação da sociedade', '0', '115'),
+('a)	Tanto a dominação da natureza quanto a alienação do homem são o preço inevitável a ser pago pela razão, pois o conhecimento ocorre quando o mundo e o homem se tornam objetos.', '0', '116'),
+('b)	O esclarecimento, na medida em que efetiva a superação do mito, atualiza a essência e o próprio destino do homem, que consiste em transformar a natureza, produzindo objetos que tornam a vida mais confortável', '0', '116'),
+('c)	Mito e razão são forças primitivas antagônicas de natureza distinta: o mito caracteriza-se pela imaginação, fantasia e falta de objetividade; já a razão, pela objetividade, por cujos processos de formalização a certeza é instituída.', '0', '116'),
+('d)	A instrumentalização da razão e a objetivação da natureza são dois momentos de um mesmo processo, cujo resultado consiste em conceber o homem e o mundo como objetos disponíveis à manipulação e ao exercício de poder.', '1', '116'),
+('a)	O grande mérito da teoria crítica foi separar teoria e prática e de considerar a realidade social distante do seu devir histórico.', '0', '117'),
+('b)	A teoria crítica faz uma crítica das noções de teoria e práxis, suprimindo a separação entre o ser e o dever, tão caras ao marxismo e ao ativismo político.', '1', '117'),
+('c)	Segundo a teoria crítica de Horkheimer, o pesquisador é neutro em relação à sociedade que estuda e critica, ou seja, a teoria critica separa o sujeito do objeto do conhecimento.', '0', '117'),
+('d)	A teoria crítica tem como principal característica não se preocupar com os problemas sociais do tempo presente e por demonstrar desinteresse pela emancipação humana diante das estruturas econômicas, políticas e culturais de seu tempo.', '0', '117'),
+('Enquanto Marx acreditava que a religião era o ópio do povo, Weber era um religioso convicto.', '0', '118'),
+('Enquanto Weber elaborou seus trabalhos sob a perspectiva do materialismo histórico, Marx foi lembrado por sua sociologia compreensiva.', '0', '118'),
+('Enquanto Marx construiu sua teoria sob a perspectiva do materialismo histórico, Weber foi lembrado por sua sociologia compreensiva.', '1', '118'),
+('Marx e Weber não discordaram em nenhum ponto de suas teorias', '0', '118'),
+('Uma ação social é toda ação tomada de forma coordenada e com outros sujeitos.', '0', '119'),
+('Uma ação social é toda ação voltada para a remediação de problemas sociais.', '0', '119'),
+('Uma ação social é toda ação que se configura em meio coletivo e sempre com um sentido político.', '0', '119'),
+('Uma ação social é qualquer ação realizada por um sujeito em um meio social que possua um sentido determinado por seu autor.', '1', '119'),
+('Ação tradicional, ação afetiva, ação política com relação a valores e ação racional com relação a fins.', '0', '120'),
+('Ação tradicional, ação afetiva, ação racional e ação carismática.', '0', '120'),
+('Ação tradicional, ação afetiva, ação política com relação a valores, ação política com relação a fins.', '0', '120'),
+('Ação tradicional, ação afetiva, ação racional com relação a fins, ação racional com relação a valores.', '1', '120'),
+('cultura e tipo Ideal.', '0', '121'),
+('classe e proletariado.', '0', '121'),
+('anomia e solidariedade.', '0', '121'),
+('ação social e racionalidade.', '1', '121'),
+('Nós não podemos pensar sobre as normas morais que são impostas;', '0', '122'),
+('Nós temos que concordar com as normas morais porque são as normas da nossa cultura;', '0', '122'),
+('A moral é um conjunto de valores pelos quais as pessoas guiam seus comportamentos e, por isso, está sujeita a mudanças a depender do país e do momento histórico em que as pessoas estão inseridas.', '1', '122'),
+('Não agimos de forma “moral” se obedecermos às regras que a sociedade estabelece.', '0', '122'),
+('Não podemos diferenciar, são palavras sinônimas.', '0', '123'),
+('Moral é um conjunto de valores, e Ética é a reflexão sobre esses valores.', '1', '123'),
+('Moral é a prática da Ética no nosso dia a dia.', '0', '123'),
+('Moral é sinônimo de “ética aplicada”.', '0', '123'),
+('Não há nenhuma relação entre as leis e os costumes, pois sãos os homens que fazem as leis que os beneficiam.', '0', '124'),
+('Para limitar os interesses humanos particulares, é preciso haver leis que prefiram os interesses gerais.', '1', '124'),
+('Os homens buscam seus interesses e isso não significa que eles sejam maus;', '1', '124'),
+('Há uma relação entre as leis e os costumes, pois as leis permitem ou impedem que os homens cometam erros.', '1', '124'),
+('Enquanto Sartre defende que há determinismo, Marx defende que o homem é livre independente das circunstâncias.', '0', '125'),
+('Sartre defende que não há determinismo e Marx estabelece um meio termo entre o determinismo e a total liberdade do homem;', '1', '125'),
+('Quando Sartre afirma “o homem está condenado a ser livre”, diz o mesmo que Marx quando defende que “os homens fazem sua própria história, mas não a fazem como querem”.', '0', '125'),
+('Sartre diz que o homem está limitado pela sua própria existência, enquanto Marx afirma que o homem está limitado pelas condições históricas.', '0', '125'),
+('a maneira que o indivíduo encontra para responsabilizar o Estado por sua condição.', '0', '126'),
+('a conjunção entre direitos políticos, civis e sociais.', '1', '126'),
+('o direito do cidadão de agir livremente na sociedade.', '0', '126'),
+('uma perspectiva que toma o indivíduo como responsável apenas pela sua própria vida.', '0', '126'),
+('cidadania liberal (direitos relativos à propriedade)', '0', '127'),
+('cidadania social (direitos relativos à garantia de uma vida digna)', '1', '127'),
+('cidadania jurídica (garantia de igualdade perante a justiça)', '0', '127'),
+('cidadania empreendedora (garantia de direitos para trabalhar por conta própria', '0', '127'),
+('Os direitos civis visam garantir a livre circulação, a liberdade de expressão, de opinião, ideológica, de credo e outras liberdades individuais.', '1', '128'),
+('Os direitos civis são uma forma de controle social, impedindo que os cidadãos possam atuar livremente.', '0', '128'),
+('Os direitos civis são relativos ao voto e a participação política.', '0', '128'),
+('Os direitos civis são baseadas na defesa à dignidade humana, na segurança alimentar e no acesso a elementos necessários à subsistência.', '0', '128'),
+('o desenvolvimento do poder absolutista que definia os limites dos direitos de seus cidadãos.', '0', '129'),
+('a obediência às normas estabelecidas, sem questionamentos.', '0', '129'),
+('a atuação de movimentos sociais e de classe.', '1', '129'),
+('a centralidade nas eleições, por ser a única maneira de debater e criar direitos.', '0', '129'),
+('atividade evolutiva que supera estágios anteriores progressivamente.', '0', '130'),
+('atividade utilitária voltada para a produção de mercadorias.', '0', '130'),
+('atividade de todos os animais, sendo racionais ou não.', '0', '130'),
+('atividade que contribui para a formação da natureza racional humana.', '1', '130'),
+('produção ontológica que humaniza o homem ao modificar a natureza e a si próprio.', '1', '131'),
+('produção física voltada à reprodução de suas necessidades individuais.', '0', '131'),
+('condição alienada nas sociedades antes e depois do capitalismo.', '0', '131'),
+('ação humana voltada para fins econômicos, independentemente do modo de produção.', '0', '131'),
+('criação de autonomia legal de empresas e trabalhadores em suas relações de ofício.', '0', '132'),
+('ordenamento jurídico particular dos contratos de trabalho no campo.', '0', '132'),
+('regulamentação das relações individuais e coletivas do trabalho.', '1', '132'),
+('construção de acordos coletivos entre setores sociais antagônicos.', '0', '132'),
+('do uso da tecnologia no processo de formação educacional do indivíduo.', '0', '133'),
+('da utilização da informação que se equivale a conhecimento.', '0', '133'),
+('da prática do uso irrestrito dos meios tecnológicos na educação formal.', '1', '133'),
+('da ciência e do conhecimento tradicional como prática de formação docente', '0', '133'),
+('aumentam da insegurança e o caos social.', '0', '134'),
+('tornam visíveis suas reivindicações e aumentam sua representatividade', '1', '134'),
+('geram de empregos e das movimentações de capital financeiro', '0', '134'),
+('enfraquecem das instituições do governo através de críticas e manifestações.', '0', '134'),
+('Greves trabalhistas', '0', '135'),
+('Coletivos feministas', '0', '135'),
+('Movimentos estudantis', '0', '135'),
+('Câmaras municipais.', '1', '135'),
+('anistia aos presos políticos do regime militar', '0', '136'),
+('retomada das eleições diretas para a presidência da república', '1', '136'),
+('reeleição direta sem necessidade de pleito eleitoral', '0', '136'),
+('implementação de um regime comunista no Brasil', '0', '136'),
+('reforma agrária e redistribuição de terras improdutivas', '1', '137'),
+('extinção da propriedade privada', '0', '137'),
+('reorganização e desenvolvimento sustentável dos centros urbanos', '0', '137'),
+('redistribuição dos lucros do setor agrário', '0', '137'),
+('a cultura é universal e definida pela política, economia e educação das sociedades em que se desenvolve.', '0', '138'),
+('a cultura é sinônimo de educação e envolve o saber sobre a arte, as leis e a moral.', '0', '138'),
+('a cultura é conjunto de tradições, crenças e costumes de determinado grupo social.', '1', '138'),
+('a cultura representa uma rede de significados que foi imposta pelos povos da antiguidade.', '0', '138'),
+('a cultura popular é espontânea e criada de forma orgânica por diversos povos.', '0', '139'),
+('a cultura erudita é fruto de estudos acadêmicos e está à disposição da elite social.', '0', '139'),
+('a cultura popular surge da interação de diversos saberes associados à linguagem popular e oral.', '0', '139'),
+('A cultura erudita é considerada superior à cultura popular sendo acessível à todas as pessoas.', '1', '139'),
+('relativismo', '0', '140'),
+('antropocentrismo', '0', '140'),
+('apropriação', '0', '140'),
+('etnocentrismo', '1', '140'),
+('a mistura étnica do Brasil é considerada positiva e vem se adaptando com o tempo.', '0', '141'),
+('a mistura étnica do Brasil resultou numa ambiguidade entre características positivas e negativas que coexistem.', '1', '141'),
+('a mistura étnica do Brasil foi fruto da violência e isso está refletido na cultura brasileira.', '0', '141'),
+('a mistura étnica do Brasil contribuiu para a criação de uma identidade brasileira negativa que se perpetua na violência.', '0', '141'),
+('É formada principalmente de poemas narrativos e textos dramáticos que visavam à catequese','0','142'),
+('Inicia com Prosopopeia, de Bento Teixeira.','0','142'),
+('É constituída por documentos que informam acerca da terra brasileira e pela literatura jesuítica.','1','142'),
+('Os textos que a constituem apresentam evidente preocupação artística e pedagógica.','0','142'),
+('Os meninos índios representam o processo de aculturação em sua concretude mais visível, como produto final de todo um empreendimento do qual participaram com igual empenho a Coroa
+Portuguesa e a Companhia de Jesus.','1','143'),
+('A presença dos meninos índios representa uma síntese perfeita e acabada daquilo que se convencionou chamar de literatura informativa.','0','143'),
+('Os meninos índios estão afirmando os valores de sua própria cultura, ao mencionar as danças rituais e as magias praticadas pelos pajés.','0','143'),
+('Os meninos índios são figuras alegóricas cuja construção como personagens atende a todos os requintes da dramaturgia renascentista.','0','143'),
+('objetivavam o resgate de valores e conceitos sociais brasileiros.','0','144'),
+('buscavam descobrir, através da arte, a história da terra recém-descoberta.','0','144'),
+('estavam empenhados em conhecer um pouco mais sobre a arte brasileira.','0','144'),
+('explorar a tão promissora nova terra','1','144'),
+('“Quando o português chegou (...)”;','0','145'),
+('“(...) Vestiu o índio (...)”;','0','145'),
+('“(...) Debaixo de uma bruta chuva (...)”;','0','145'),
+('“(...) Que pena! Fosse uma manhã de sol (...)”.','1','145'),
+('simples; a antítese; parnasiana.','0','146'),
+('rebuscada; a antítese; barroca.','1','146'),
+('objetiva; a metáfora; simbolista.','0','146'),
+('subjetiva; o verso livre; romântica.','0','146'),
+('O Barroco estabelece contradições entre espírito e carne, alma e corpo, morte e vida','0','147'),
+('O homem centra suas preocupações em seu próprio ser, tendo em vista seu aprimoramento, com base na cultura greco-romana.','1','147'),
+('O Barroco apresenta, como característica marcante, o espírito de tensão, conflito entre tendências opostas: de um lado, o teocentrismo medieval; de outro, o antropocentrismo renascentista.','0','147'),
+('A arte barroca é vinculada à Contrarreforma.','0','147'),
+('Cultismo e conceptismo','0','148'),
+('Conceptismo','0','148'),
+('Cultismo','1','148'),
+('Em nenhuma das tendências','0','148'),
+('Gregório de Matos','0','149'),
+('Jerônimo Baía','0','149'),
+('Bento Teixeira','1','149'),
+('Bento Gonçalves','0','149'),
+('O escritor árcade reaproveita os seres criados pela mitologia greco-romana, deuses e entidades pagãs. Mas esses mesmos deuses convivem com outros seres do mundo cristão.','0','150'),
+('A produção literária do Arcadismo brasileiro constitui-se sobretudo de poesia, que pode ser lírico-amorosa, épica e satírica.','0','150'),
+('O árcade recusa o jogo de palavras e as complicadas construções da linguagem barroca, preferindo a clareza, a ordem lógica na escrita','0','150'),
+('A morte de Moema, índia que se deixa picar por uma serpente, como prova de fidelidade e amor ao índio Cacambo, é trecho mais conhecido da obra O Uraguai, de Basílio da Gama.','1','150'),
+('Romantismo, de autoria de Gonçalves Dias.','0','151'),
+('Arcadismo, de autoria de Santa Rita Durão.','0','151'),
+('Arcadismo, de autoria de Tomás Antônio Gonzaga.','1','151'),
+('Simbolismo, de Alphonsus de Guimaraens.','0','151'),
+('o uso da emoção em detrimento da razão, pois esta retira do homem seus melhores sentimentos.','0','152'),
+('o desejo de enriquecer no campo, aproveitando as riquezas naturais.','0','152'),
+('a dedicação à produção poética junto à natureza, fonte de inspiração dos poetas.','0','152'),
+('o sonho de uma vida mais simples e natural, distante dos centros urbanos.','1','152'),
+('Os poetas árcades defendiam o bucolismo como estilo de vida no campo, longe dos centros urbanos. A vida pobre e feliz no ambiente campestre contrasta com a vida luxuosa e triste na cidade.','0','153'),
+('Apego excessivo pela forma em detrimento do conteúdo. O Arcadismo defendeu a “arte pela arte”, um retorno aos ideais literários clássicos','1','153'),
+('Como expressão artística da burguesia, o Arcadismo veiculou também certos ideais políticos e ideológicos dessa classe, formulados pelo Iluminismo.','0','153'),
+('O desejo de aproveitar o dia e a vida enquanto é possível, também conhecido como carpe diem.','0','153'),
+('a angústia alimentada pela constatação da irreversibilidade da morte.','0','154'),
+('a melancolia que frustra a possibilidade de reação diante da perda.','1','154'),
+('o descontrole das emoções provocado pela autopiedade.','0','154'),
+('o desejo de morrer como alívio para a desilusão amorosa.','0','154'),
+('“… o autor sobredoura a realidade e fecha os olhos às sardas e espinhas …”','1','155'),
+('“… era talvez a mais atrevida criatura da nossa raça …”','0','155'),
+('“Era bonita, fresca, saía das mãos da natureza, cheia daquele feitiço, precário e eterno, …”','0','155'),
+('“Naquele tempo contava apenas uns quinze ou dezesseis anos … “','0','155'),
+('é concebida como uma força indomável que submete o eu lírico a uma experiência erótica instintiva.','0','156'),
+('expressa sentimentos amorosos.','1','156'),
+('é representada por divindade mítica da tradição clássica.','0','156'),
+('funciona apenas como quadro cenográfico para o idílio amoroso.','0','156'),
+('o ufanismo, atitude de quem se orgulha excessivamente do país em que nasceu, e o tom de que se revestem os dois textos.','0','157'),
+('a exaltação da natureza é a principal característica do texto B, que valoriza a paisagem tropical realçada no texto A.','0','157'),
+('o texto B aborda o tema da nação, como o texto A, mas sem perder a visão crítica da realidade brasileira','1','157'),
+('o texto B, em oposição ao texto A, revela distanciamento geográfico do poeta em relação à pátria','0','157'),
+
+('how much – some – how many','0','158'),
+('many – any – how many','1','158'),
+('how many – any – how many','0','158'),
+('how much – any – how much','0','158'),
+
+('many/many/ much/much','1','159'),
+('many/ much/many/ many','0','159'),
+('much/ many/ many/ much','0','159'),
+('many/ many/many/ much','0','159'),
+
+('I need to buy many potatoes.','0','160'),
+('Dont waste so much money with me.','0','160'),
+('They need many wine to the party.','1','160'),
+('I ll give you so much love.','0','160'),
+
+('Much Brazilian children go to Disney World','0','161'),
+('People spend many time visiting one another','0','161'),
+('Many people travel during their vacations','1','161'),
+('Many money is spent during holidays','0','161'),
+
+('he word “still” indicates consequence.','0','162'),
+('the word “ever” is an auxiliary verb.','0','162'),
+('all clauses are in the present continuous tense.','1','162'),
+('the word “Ebola” is the subject of the sentence.','0','162'),
+
+('Timing is in the present continuous tense','0','163'),
+('Preventing shows that if a preposition is followed by a verb, the verb ends in –ing.','1','163'),
+('Only offspring is a noun ending in -ing.','0','163'),
+('None of the explanations are right.','0','163'),
+
+('need – are employing','1','164'),
+('are needing – are employing','0','164'),
+('needed – are employing','0','164'),
+('are to need – employed','0','164'),
+
+('listen – am not','1','165'),
+('listened – had','0','165'),
+('listening – was not','0','165'),
+('was listening – not','0','165'),
+
+('did – made – made','1','166'),
+('made – did – made','0','166'),
+('did – made – did','0','166'),
+('made – made – made','0','166'),
+
+('iGeners were born 1 – the internet was finally popularized 2','0','167'),
+('iPad was released 1 – the 1st-generation iPhone hadn’t been invented yet 2','0','167'),
+('iPhone was designed, developed and marketed 1 – post-Millennials were being brought to life 2','0','167'),
+('internet boom happened 1 – Millennials had already been born 2','1','167'),
+
+('remained - discovered - measuring - was carved - used for','1','168'),
+('remained - had discovered - measuring - carved - used to','0','168'),
+('had remained - had discovered - measured - is carved - using to','0','168'),
+('had remained - discovered - measured - was carved - uses for','0','168'),
+
+('March-grow-become.','1','169'),
+('March-grew-become.','0','169'),
+('March-grown-become','0','169'),
+('Marched-grow-become.','0','169'),
+
+('changed has','0','170'),
+('are changing','0','170'),
+('has changed','0','170'),
+('have changed','1','170'),
+
+('have already drunk','1','171'),
+('have already drink','0','171'),
+('already drink','0','171'),
+('has already drunk','0','171')
+
+
+
+insert into alternativas
+(texto_alt, resp_alt, quest_id)
+values
+('a) As crianças, obviamente, preferem mais os doces do que os legumes e verduras.', '0', '1'),
+('b) Assista uma TV de LCD pelo preço de uma de projeção e leve junto um Home Theater!', '0', '1'),
+('c) O jóquei Nélson de Sousa foi para Inglaterra visando títulos e euros.', '0', '1'),
+('d) Construir impérios a partir do nada implica inovação e paixão pelo risco.', '1', '1'),
+
+('a) Pode-se concordar ou discordar, até radicalmente, de toda a política externa brasileira. (Clóvis Rossi)', '0', '2'),
+('b) Educador é todo aquele que confere e convive com esses conhecimentos. (J. Carlos de Sousa)',  '0', '2'),
+('c) Vi e gostei muito do filme “O Jardineiro Fiel” cujo diretor é um brasileiro.', '0', '2'),
+('d) A sociedade brasileira quer a paz, anseia por ela e a ela aspira.',  '1', '2'),
+
+('a) Deu-lhe um belo presente de aniversário.', '0', '3'),
+('b) Levei-o para o médico esta manhã.', '0', '3'),
+('c) Gostamos deste novo filme.', '0', '3'),
+('d) Fui no cinema ontem.', '1', '3'),
+
+('a) Assistimos um belo espetáculo de dança a semana passada.', '1', '4'),
+('b) Não assisti à missa.', '0', '4'),
+('c) Os médicos assistiram os doentes durante a epidemia', '0', '4'),
+('d) O técnico assistiu os jogadores.', '0', '4'),
+
+('a) mesmas, anexos, bastantes', '1', '5'),
+('b) mesmo, anexo, bastante', '0', '5'),
+('c) mesmas, anexo, bastante', '0', '5'),
+('d) mesmo, anexos, bastante', '0', '5'),
+
+('a) Obrigava sua corpulência a exercício e evolução forçada.', '0', '6'),
+('b) Obrigava sua corpulência a exercício e evolução forçados.', '0', '6'),
+('c) Obrigava sua corpulência a exercício e evolução forçadas.', '1', '6'),
+('d) Obrigava sua corpulência a forçado exercício e evolução.', '0', '6'),
+
+('a) As ferramentas que julgo necessárias para você consertar o motor, ei-Ias nesta caixa; deixo anexa, para seu próprio controle, uma relação delas.', '0', '7'),
+('b) É realmente louvável os esforços que vocês empreenderam para nos ajudar, portanto, qualquer que sejam os resultados, agradecemos muito.', '1', '7'),
+('c) Questões político-econômicas envolvem amplo debate, logo não considere inaceitáveis algumas indefinições referentes a esses pontos.', '0', '7'),
+('d) Muitas pesquisas recentes tornaram superadas algumas afirmações sobre a língua e a literatura portuguesas.', '0', '7'),
+
+('a) mau, é preciso', '1', '8'),
+('b) mau, são precisas', '0', '8'),
+('c) mal, é precisa', '0', '8'),
+('d) má, são precisas', '0', '8'),
+
+('a) fazem, havia, existe', '0', '9'),
+('b) fazem, havia, existe', '0', '9'),
+('c) fazem, haviam, existem', '0', '9'),
+('d) faz, havia, existem', '1', '9'),
+
+('a) Existem na atualidade diferentes tipos de inseticidas prejudiciais à saúde do homem.', '0', '10'),
+('b) Podem provocar sérias lesões hepáticas, os defensivos agrícolas à base de DDT.', '0', '10'),
+('c) Faltam aos países subdesenvolvidos uma legislação mais rigorosa sobre os agrotóxicos.', '1', '10'),
+('d) Persistem por muito tempo no meio ambiente os efeitos nocivos dos inseticidas clorados.', '0', '10'),
+
+('a) Comentam-se; manter; repor; haverão; intervierem.', '0', '11'),
+('b) Comenta-se; mantiver; repuser; haverão; intervirem.', '0', '11'),
+('c) Comenta-se; mantesse; repuser; haverão; intervierem.', '0', '11'),
+('d) Comenta-se; mantiver; repuser; haverá; intervierem.', '1', '11'),
+
+('a) leva, existe, torna', '1', '12'),
+('b) levam, existe, tornam', '0', '12'),
+('c) levam, existem, tornam', '0', '12'),
+('d) levam, existem, torna', '0', '12'),
+
+('a) causa, causa, condição, oposição, comparação.', '1', '13'),
+('b) comparação, condição, finalidade, oposição, tempo.', '0', '13'),
+('c) causa, causa, conformidade, oposição, condição.', '0', '13'),
+('d) finalidade, comparação, tempo, condição, causa.', '0', '13'),
+
+('a) “[...] a palavra gripe nos chegou após uma série de contágios entre línguas.”', '0', '14'),
+('b) “Partiu da Itália em 1743 a epidemia de gripe [...]”.', '0', '14'),
+('c) “O primeiro era um termo derivado do latim medieval influentia, que significava ‘influência dos astros sobre os homens’.”', '0', '14'),
+('d) “Supõe-se que fizesse referência ao modo violento como o vírus se apossa do organismo infectado.”', '1', '14'),
+
+('a) a expressão “Além disso” marca uma sequenciação de ideias.', '1', '15'),
+('b) o conectivo “mas também” inicia oração que exprime ideia de contraste.', '0', '15'),
+('c) o termo “como”, em “como morte súbita e derrame”, introduz uma generalização.', '0', '15'),
+('d) o termo “Também” exprime uma justificativa.', '0', '15'),
+
+('a) Apenas V está correta.', '0', '16'),
+('b) II e IV estão corretas.', '0', '16'),
+('c) I, III e V estão corretas.', '1', '16'),
+('d) I e III estão corretas.', '0', '16'),
+
+('a) 2', '0', '17'),
+('b) 3', '0', '17'),
+('c) 4', '0', '17'),
+('d) 6', '1', '17'),
+
+('a) 40 figurinhas', '0', '18'),
+('b) 44 figurinhas', '1', '18'),
+('c) 52 figurinhas', '0', '18'),
+('d) 60 figurinhas', '0', '18'),
+
+('a) 20', '0', '19'),
+('b) 21', '1', '19'),
+('c) 22', '0', '19'),
+('d) 23', '0', '19'),
+
+('a) R$ 142.000,00', '0', '20'),
+('b) R$ 135.000,00', '0', '20'),
+('c) R$ 90.000,00', '0', '20'),
+('d) R$ 120.000,00', '1', '20'),
+
+('a) nenhuma solução real.', '0', '21'),
+('b) uma única solução real.','1', '21'),
+('c) duas soluções reais.', '0', '21'),
+('d) três soluções reais.', '0', '21'),
+
+('a) 1', '0', '22'),
+('b) 2', '0', '22'),
+('c) 3', '0', '22'),
+('d) 4', '1', '22'),
+
+('a)  k = ± 2', '0', '23'),
+('b) k = + 2', '0', '23'),
+('c) k = -2', '1', '23'),
+('d) k = 0', '0', '23'),
+
+('a) x² + x – 6 = 0', '1', '24'),
+('b) x² – x – 6 = 0', '0', '24'),
+('c) x² +5x + 6 = 0', '0', '24'),
+('d) x² – 5x +6 = 0', '0', '24'),
+
+('a) 112', '0', '25'),
+('b) 84', '0', '25'),
+('c) 124', '1', '25'),
+('d) 135', '0', '25'),
+
+('a) 1', '0', '26'),
+('b) 2', '0', '26'),
+('c) 3', '0', '26'),
+('d) 4', '1', '26'),
+
+('a) 25', '0', '27'),
+('b) 7', '0', '27'),
+('c) 9', '0', '27'),
+('d) 11', '1', '27'),
+
+('a) R$ 103,00', '0', '28'),
+('b) R$ 93,75', '1', '28'),
+('c) R$ 81,25', '0', '28'),
+('d) R$ 95,35', '0', '28'),
+
+('a) R$ 1,00', '0', '29'),
+('b) R$ 1,50', '0', '29'),
+('c) R$ 1,75', '0', '29'),
+('d) R$ 2,00', '1', '29'),
+
+
+('a) há 1 carro a mais que a quantidade de motos.', '0', '30'),
+('b) há 2 carros a mais que a quantidade de motos.', '0', '30'),
+('c) há 1 moto a mais que a quantidade de carros.', '1', '30'),
+('d) há 2 motos a mais que a quantidade de carros.', '0', '30'),
+
+('a) 2', '0', '31'),
+('b) 3', '1', '31'),
+('c) 4', '0', '31'),
+('d) 5', '0', '31'),
+
+('a) 0', '1', '32'),
+('b) 1', '0', '32'),
+('c) 2', '0', '32'),
+('d) 4', '0', '32'),
+
+
+('a) HSe e HS', '0', '33'),
+('b) H2Se e HS', '0', '33'),
+('c) HSe e H2S', '0', '33'),
+('d) H2Se e H2S', '1', '33'),
+
+('a) átomos, íons e moléculas;', '0', '34'),
+('b) íons, átomos e moléculas;', '0', '34'),
+('c) íons, moléculas e átomos', '1', '34'),
+('d) moléculas, átomos e íons;', '0', '34'),
+
+('a) entre átomos ligados predominam as forças de atração.', '0', '35'),
+('b) quando se forma uma ligação entre átomos o sistema formado atinge o máximo de energia.', '0', '35'),
+('c) as atrações e repulsões numa molécula não são só de natureza eletrostática.', '0', '35'),
+('d) entre átomos ligados há equilíbrio entre as atrações e as repulsões eletrostáticas. (E) ocorre por forças de London.', '1', '35'),
+
+('a) metálica', '0', '36'),
+('b) covalente', '0', '36'),
+('c) dipolo induzido', '0', '36'),
+('d) iônica', '1', '36'),
+
+('a) N2 + 3 H2 → 2 NH3', '0', '37'),
+('b) 2 HNO3 + Ca(OH)2 → 2 Ca(NO3)2 + 2 H2O', '0', '37'),
+('c) BaCl2 + H2SO4 → BaSO4 + 2 HCl', '0', '37'),
+('d) C12H22O11 → 12 C + 11H2O', '1', '37'),
+
+('a) dupla troca, análise, análise.', '0', '38'),
+('b) simples troca, síntese, síntese.', '1', '38'),
+('c) dupla troca, síntese, síntese.', '0', '38'),
+('d) simples troca, análise, análise.', '0', '38'),
+
+('a) Dupla troca, adição, análise, deslocamento e decomposição.', '0', '39'),
+('b) Dupla troca, adição, análise, simples troca e decomposição.', '0', '39'),
+('c) Simples troca, dupla troca, síntese, análise e deslocamento.', '0', '39'),
+('d) Deslocamento, síntese, dupla troca, adição e análise.', '1', '39'),
+
+('a) síntese.', '1', '40'),
+('b) decomposição.', '0', '40'),
+('c) reação de substituição.', '0', '40'),
+('d) reação de dupla troca.', '0', '40'),
+
+('a) I.', '0', '44'),
+('b) II.', '1', '44'),
+('c) III.', '0', '44'),
+('d) I e III.', '0', '44'),
+
+('a) N2 + O2 → 2 NO', '0', '45'),
+('b) Aℓ + 3 H2SO4→ Aℓ2(SO4)3 + 3 H2', '0', '45'),
+('c) Zn + CuSO4 → Cu + ZnSO4', '0', '45'),
+('d) NaCℓ + AgNO3 → AgCℓ + NaNO3 ', '1', '45'),
+
+('a) o Sn e o Cl sofrem oxidação.', '0', '46'),
+('b) o Sn sofre oxidação, e o O, redução.', '1', '46'),
+('c) o Sn sofre oxidação, e HCl, redução.', '0', '46'),
+('d) a H2O2 sofre redução, e o Cl, oxidação.', '0', '46'),
+
+('a) F2 e H2O.', '0', '47'),
+('b) F2 e HF.', '0', '47'),
+('c) H2O e HF.', '0', '47'),
+('d) H2O e F2.', '1', '47'),
+
+('a) 1,5 . 10^20', '1', '48'),
+('b) 2,4 . 10^23', '0', '48'),
+('c) 3,4 . 10^23', '0', '48'),
+('d) 4,5 . 10^20', '0', '48'),
+
+('a) 0,32 . 10^23 g', '0', '49'),
+('b) 0,29 . 10^23 g', '0', '49'),
+('c) 1,60 . 10^23 g', '0', '49'),
+('d) 32,00 g', '1', '49'),
+
+('a) 18 g', '0', '50'),
+('b) 30 g', '0', '50'),
+('c) 6,0 . 10^23', '0', '50'),
+('d) 5,0 . 10^-23', '1', '50'),
+
+('a) 200 g e 6,0. 1023 átomos.', '0', '51'),
+('b) 800 g e 48,0. 1023 átomos.', '0', '51'),
+('c) 1600 g e 48,0. 1023 átomos.', '1', '51'),
+('d) 200 g e 48,0. 1023 átomos', '0', '51'),
+
+('a) 2056 km.', '0', '52'),
+('b) 6048 km', '1', '52'),
+('c) 7512 km', '0', '52'),
+('d) 8600 km', '0', '52'),
+
+('a) 400.000 N', '0', '53'),
+('b) 150.000 N', '0', '53'),
+('c) 0 N', '1', '53'),
+('d) 3000 N', '0', '53'),
+
+('a) S = 3 + 10t', '1', '54'),
+('b) S =10 + 3t', '0', '54'),
+('c) S = 3t + 5t²', '0', '54'),
+('d) S = 10t + 3t²', '0', '54'),
+
+('a) Um corpo em MU percorre espaços cada vez maiores a cada intervalo de tempo posterior.', '0', '55'),
+('b) Um corpo em MU percorre distâncias iguais em intervalos de tempos iguais.', '1', '55'),
+('c) Um corpo em MU move-se com aceleração constante.', '0', '55'),
+('d) Um corpo em MU permanece em uma posição constante em todos os instantes de tempo.', '0', '55'),
+
+('a) 12,0 m', '0', '56'),
+('b) 24,0 m', '1', '56'),
+('c) 22,0 m', '0', '56'),
+('d) 18,0 m', '0', '56'),
+
+('a) 45,0 m', '1', '57'),
+('b) 15,0 m', '0', '57'),
+('c) 300,0 m', '0', '57'),
+('d) 324,0 m', '0', '57'),
+
+('a) S0 = 2 m, v0 = 15 m/s e a = 10 m/s2', '0', '58'),
+('b) S0 = 10 m, v0 = 15 m/s e a = 2 m/s2', '0', '58'),
+('c) S0 = 15 km, v0 = 10 km/h e a = 2 m/s2', '0', '58'),
+('d) S0 = 15 m, v0 = 10 m/s e a= 4 m/s2', '1', '58'),
+
+('a) 4,0 s', '0', '59'),
+('b) 1,0 s', '1', '59'),
+('c) 3,0 s', '0', '59'),
+('d) 5,0 s', '0', '59'),
+
+('a) A massa é a medida quantitativa da inércia.', '0', '60'),
+('b) Na falta de atrito, um corpo em movimento permanecerá em movimento perpetuamente.', '0', '60'),
+('c) A situação de movimento retilíneo uniforme é denominada de equilíbrio dinâmico.', '0', '60'),
+('d) A tendência de um corpo em movimento uniforme e com aceleração constante é manter-se em movimento perpetuamente.', '1', '60'),
+
+('a) I e II são falsas', '0', '61'),
+('b) I, II, III e IV são verdadeiras.', '0', '61'),
+('c) IV e V são falsas', '0', '61'),
+('d) I, III e IV são verdadeiras.', '1', '61'),
+
+('a) 350 N', '0', '62'),
+('b) 300 N', '1', '62'),
+('c) 200 N', '0', '62'),
+('d) 150 N', '0', '62'),
+
+('a) 24000 N', '0', '63'),
+('b) 3200 N', '0', '63'),
+('c) 1600 N', '1', '63'),
+('d) 1200 N', '0', '63'),
+
+('a) Em módulo, a aceleração centrípeta de A é maior do que a aceleração centrípeta de B.', '1', '64'),
+('b) Em módulo, as velocidades angulares de A e B são iguais.', '0', '64'),
+('c) A poderia acompanhar B se a velocidade angular de A fosse maior do que a de B, em módulo.', '0', '64'),
+('d) Se as massas dos corredores são iguais, a força centrípeta sobre B é maior do que a força centrípeta sobre A, em módulo', '0', '64'),
+
+('a) 1296 m', '0', '65'),
+('b) 925 m', '0', '65'),
+('c) 1200 m', '0', '65'),
+('d) 100 m', '1', '65'),
+
+('a) 0,5', '0', '66'),
+('b) 3', '0', '66'),
+('c) 0,3', '1', '66'),
+('d) 0,2', '0', '66'),
+
+('a) Ascaridíase', '0', '67'),
+('b) Ancilostomíase', '0', '67'),
+('c) Cólera', '0', '67'),
+('d) Malária', '1', '67'),
+
+('a) Esquistossomose', '0', '68'),
+('b) Filariose', '0', '68'),
+('c) Ancilostomíase', '0', '68'),
+('d) Teníase', '1', '68'),
+
+('a) Esquistossomose', '0', '69'),
+('b) Filariose', '0', '69'),
+('c) Ancilostomíase', '1', '69'),
+('d) Ascaridíase', '0', '69'),
+
+('a) apenas I.', '0', '70'),
+('b) apenas II.', '1', '70'),
+('c) apenas III.', '0', '70'),
+('d) apenas I e II.', '0', '70'),
+
+('a) AGTTCA', '1', '71'),
+('b) AGUUCA', '0', '71'),
+('c) ATAAUA', '0', '71'),
+('d) UCTTGU', '0', '71'),
+
+('a) O gene é uma porção da molécula de RNA que determina uma característica.', '0', '72'),
+('b) O gene é uma região do DNA que é responsável pela síntese de carboidratos, determinando nossas características.', '0', '72'),
+('c) O gene é uma sequência de nucleotídeos em que está contida a informação que será usada para a síntese de proteínas.', '1', '72'),
+('d) Trecho do RNA que contém sequências de nucleotídeos que são usados para a síntese de proteínas.', '0', '72'),
+
+('a) RNA mensageiro', '1', '73'),
+('b) RNA codificador.', '0', '73'),
+('c) RNA transportador.', '0', '73'),
+('d) RNA de códons.', '0', '73'),
+
+('a) Codificar as proteínas.', '0', '74'),
+('b) Transportar a proteína pronta.', '0', '74'),
+('c) Transportar um aminoácido.', '1', '74'),
+('d) Formar os ribossomos.', '0', '74'),
+
+('a) UAG.', '0', '75'),
+('b) AUU.', '0', '75'),
+('c) AUG.', '1', '75'),
+('d) UUA.', '0', '75'),
+
+('a) UAG.', '0', '76'),
+('b) UAA.', '0', '76'),
+('c) UGG.', '1', '76'),
+('d) UGA.', '0', '76'),
+
+('a) Multiribossomo.', '0', '77'),
+('b) Polirribossomo.', '1', '77'),
+('c) Cadeia ribossômica.', '0', '77'),
+('d) RNA ribossômico.', '0', '77'),
+
+('a) Transmissão; Tradução', '0', '78'),
+('b) Transcrição; Tradução', '1', '78'),
+('c) Tradução; Transcrição', '0', '78'),
+('d) Transcrição; Transcrição', '0', '78'),
+
+('a) 2', '0', '79'),
+('b) 3', '1', '79'),
+('c) 4', '0', '79'),
+('d) 5', '0', '79'),
+
+('a) 1- IAIB, 2- IBi, 3- O, 4-IAIBi.', '0', '80'),
+('b) 1-IBi, 2- ii, 3- O, 4-IAIBi.', '0', '80'),
+('c) 1-IBIB, 2- IBi, 3-O, 4-IAIBi.', '0', '80'),
+('d) 1-IBIB, 2-IBi, 3- O, 4-IAIB.', '1', '80'),
+
+('a) Três genótipos e dois fenótipos.', '0', '81'),
+('b) Quatro genótipos e três fenótipos.', '0', '81'),
+('c) Três genótipos e três fenótipos.', '1', '81'),
+('d) Quatro genótipos e quatro genótipos.', '0', '81'),
+
+('a) O fator Rh é determinado por um gene dominante que garante a presença do antígeno no eritrócito.', '0', '82'),
+('b) Uma pessoa com fator Rh positivo pode apresentar genótipo RR ou Rr.', '0', '82'),
+('c) Uma pessoa Rh negativo não possui antígenos nos seus eritrócitos.', '0', '82'),
+('d) Mulheres com sangue Rh positivo podem desencadear a doença hemolítica do recém-nascido em seus filhos.', '1', '82')
