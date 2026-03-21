@@ -1,11 +1,31 @@
-# TCC
- Projeto realizado em grupo para conclusão de curso, 
- Este projeto é um site voltado em ajudar estudantes e vestibulandos,
- reunindo vestibulares e livros para sua preparação, 
- video-aulas, conteúdo escrito e questões para melhor fixação do aprendizado,
- além de um cronograma para otmizar seus estudos.
+Artons — Plataforma de Estudos para Vestibular
 
- O projeto foi feito no frameworl laravel com php 8.1, e utiliza banco de dados sql, 
- utilizando o MS SQLServer como ambiente por possuir conhecimentos com a plataforma,
- o arquivo insert.txt, possui os inserts a serem utilizados dentro do site 
- para que funcione adequadamente.
+Artons é uma plataforma web desenvolvida como projeto de conclusão de curso,
+com o objetivo de apoiar estudantes e vestibulandos em sua jornada de preparação
+para o vestibular.
+
+Sobre o Projeto
+
+O site reúne em um único ambiente:
+
+-  Vídeo-aulas organizadas por disciplina e tema
+-  Conteúdo escrito didático e objetivo
+-  Questões de fixação para praticar e consolidar o aprendizado
+-  Cronograma de estudos personalizável para otimizar sua rotina
+-  Indicações de livros e vestibulares para referência e preparação
+
+## Tecnologias Utilizadas
+
+- Framework: Laravel
+- Linguagem back-end: PHP 8.1
+- Front-end: HTML, CSS, Bootstrap e JavaScript
+- Banco de Dados: Microsoft SQL Server
+
+## Configuração do Banco de Dados
+
+Para popular o banco de dados com os dados necessários para o funcionamento
+adequado da plataforma, execute os scripts presentes no arquivo insert.txt.
+
+## Desenvolvido por
+
+Projeto em grupo — Trabalho de Conclusão de Curso.
